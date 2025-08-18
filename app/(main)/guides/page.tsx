@@ -5,10 +5,10 @@ import { Newsletter } from '~/app/(main)/Newsletter'
 
 // 分类常量
 const CATEGORIES = {
-  PLATFORM: 'Platform Guides',
-  SHIPPING: 'Shipping & Payment',
-  SAFETY: 'Safety & Scams',
-  TOOLS: 'Tools & Dashboards'
+  GEAR: 'Gear Guides',
+  BUYING: 'Buying & Authenticity',
+  TRAINING: 'Training & Health',
+  TACTICS: 'Tactics & Strategy'
 };
 
 // 徽章组件
@@ -30,10 +30,10 @@ function Badge({ children, color = 'green' }) {
 // 分类标签组件
 function CategoryTag({ category }) {
   const categoryConfig = {
-    [CATEGORIES.PLATFORM]: { icon: '🛍️', color: 'blue' },
-    [CATEGORIES.SHIPPING]: { icon: '🌍', color: 'green' },
-    [CATEGORIES.SAFETY]: { icon: '🔍', color: 'red' },
-    [CATEGORIES.TOOLS]: { icon: '🛠', color: 'amber' },
+    [CATEGORIES.GEAR]: { icon: '⚽', color: 'blue' },
+    [CATEGORIES.BUYING]: { icon: '🛡️', color: 'green' },
+    [CATEGORIES.TRAINING]: { icon: '🏃‍♂️', color: 'red' },
+    [CATEGORIES.TACTICS]: { icon: '🧠', color: 'amber' },
   };
   
   const { icon, color } = categoryConfig[category];
@@ -49,64 +49,64 @@ function CategoryTag({ category }) {
 }
 
 export default function Page() {
-  // 指南列表 - 现在包含更多元数据
+  // 指南列表 - 运动装备主题
   const guides = [
     {
-      title: "How to Buy from Weidian (in English)",
-      description: "Step-by-step walkthrough for creating an account, adding items, and checking out from Weidian.",
-      slug: "how-to-buy-from-weidian",
-      category: CATEGORIES.PLATFORM,
-      icon: "🛍️",
+      title: "Soccer Cleat Buying Guide 2024",
+      description: "Complete guide to choosing the right boots for your playing style and surface.",
+      slug: "soccer-cleat-buying-guide-2024",
+      category: CATEGORIES.GEAR,
+      icon: "⚽",
       isNew: true,
       isEditorsPick: true,
-      audience: "Perfect for first-time buyers new to Chinese platforms.",
-      lastUpdated: "May 2025",
+      audience: "Perfect for players at all levels choosing their next pair of boots.",
+      lastUpdated: "Aug 2024",
     },
     {
-      title: "Shipping Weidian Products Internationally",
-      description: "Tips and tools for forwarding agents, shipping costs, and delivery timeframes.",
-      slug: "shipping-weidian-products-internationally",
-      category: CATEGORIES.SHIPPING,
-      icon: "✈️",
-      audience: "Perfect for first-time users confused about delivery timelines.",
-      lastUpdated: "April 2025",
+      title: "How to Spot Fake Jerseys",
+      description: "Learn to identify authentic vs replica jerseys and avoid counterfeit gear.",
+      slug: "how-to-spot-fake-jerseys",
+      category: CATEGORIES.BUYING,
+      icon: "🛡️",
+      audience: "Essential for collectors and fans buying jerseys online.",
+      lastUpdated: "July 2024",
     },
     {
-      title: "Buying on Taobao with a Foreign Card",
-      description: "Payment tips and common pitfalls for non-Chinese buyers.",
-      slug: "buying-on-taobao-with-foreign-card",
-      category: CATEGORIES.PLATFORM,
-      icon: "💳",
+      title: "Jersey Care & Washing Guide",
+      description: "Keep your team colors vibrant and numbers intact with proper care.",
+      slug: "jersey-care-washing-guide",
+      category: CATEGORIES.GEAR,
+      icon: "👕",
       isNew: true, 
-      audience: "Helps you avoid common payment errors with overseas cards.",
-      lastUpdated: "May 2025",
+      audience: "Helps extend the life of your sports apparel collection.",
+      lastUpdated: "Aug 2024",
     },
     {
-      title: "Finding Trending Products on Xiaohongshu",
-      description: "How to discover and buy popular items from China's top social commerce platform.",
-      slug: "trending-products-on-xiaohongshu",
-      category: CATEGORIES.PLATFORM,
-      icon: "🔍",
-      audience: "Ideal for trend-hunters looking to find viral products before they go global.",
-      lastUpdated: "March 2025",
+      title: "Running Shoe Sizing Across Brands",
+      description: "US, EU, UK size conversions and fit differences between major brands.",
+      slug: "running-shoe-sizing-guide",
+      category: CATEGORIES.GEAR,
+      icon: "👟",
+      audience: "Ideal for runners shopping online or trying new brands.",
+      lastUpdated: "June 2024",
     },
     {
-      title: "Avoiding Scams & Counterfeit Products",
-      description: "Red flags to watch for and how to verify seller reputation when shopping on Chinese platforms.",
-      slug: "avoiding-scams-counterfeit-products",
-      category: CATEGORIES.SAFETY,
-      icon: "🚨",
-      audience: "Essential reading for anyone concerned about product authenticity.",
-      lastUpdated: "April 2025",
+      title: "Injury Prevention for Weekend Warriors",
+      description: "Common sports injuries and how to avoid them through proper preparation.",
+      slug: "injury-prevention-weekend-warriors",
+      category: CATEGORIES.TRAINING,
+      icon: "🏥",
+      audience: "Essential reading for recreational athletes of all ages.",
+      lastUpdated: "July 2024",
     },
     {
-      title: "Currency Conversion & Fees Explained",
-      description: "Understanding the true cost of international purchases from Chinese platforms.",
-      slug: "currency-conversion-fees-explained",
-      category: CATEGORIES.SHIPPING,
-      icon: "💱",
-      audience: "Helps budget-conscious shoppers avoid hidden fees.",
-      lastUpdated: "February 2025",
+      title: "Understanding Football Formations",
+      description: "From 4-4-2 to 3-5-2: tactical formations explained in simple terms.",
+      slug: "understanding-football-formations",
+      category: CATEGORIES.TACTICS,
+      icon: "🧠",
+      audience: "Helps casual fans understand what they're watching.",
+      lastUpdated: "May 2024",
     },
   ];
   
@@ -117,10 +117,10 @@ export default function Page() {
     <Container className="mt-16 sm:mt-32">
       <header className="max-w-2xl">
         <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-          Guides
+          All Guides
         </h1>
         <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-          <Balancer>Step-by-step guides to help you shop from Weidian, Taobao, Xiaohongshu, and more — no Chinese required.</Balancer>
+          <Balancer>Honest, practical guides for sports gear, training, and fan culture — no hype, just clear advice you can trust.</Balancer>
         </p>
       </header>
       
@@ -147,10 +147,10 @@ export default function Page() {
             key={category} 
             className="inline-flex items-center px-4 py-2 bg-zinc-100 dark:bg-zinc-800 rounded-full text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
           >
-            {category === CATEGORIES.PLATFORM && '🛍️'}
-            {category === CATEGORIES.SHIPPING && '🌍'}
-            {category === CATEGORIES.SAFETY && '🔍'}
-            {category === CATEGORIES.TOOLS && '🛠️'}
+            {category === CATEGORIES.GEAR && '⚽'}
+            {category === CATEGORIES.BUYING && '🛡️'}
+            {category === CATEGORIES.TRAINING && '🏃‍♂️'}
+            {category === CATEGORIES.TACTICS && '🧠'}
             <span className="ml-1">{category}</span>
           </button>
         ))}
@@ -211,7 +211,7 @@ export default function Page() {
           <div className="mt-12 pt-8 border-t border-zinc-200 dark:border-zinc-700/40 text-center">
             <h3 className="text-xl font-semibold text-zinc-800 dark:text-zinc-200 mb-4">Get notified when new guides go live</h3>
             <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-6">
-              We're adding new guides every week. Subscribe to be the first to know.
+              We're adding new sports guides every week. Subscribe to be the first to know.
             </p>
             <div className="max-w-md mx-auto">
               <Newsletter />
@@ -224,29 +224,29 @@ export default function Page() {
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <li>
                 <Link 
-                  href="/how-to-buy" 
+                  href="/gear" 
                   className="flex items-center p-4 bg-zinc-50 dark:bg-zinc-800/50 rounded-lg border border-zinc-200 dark:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-700/50 transition-colors"
                 >
-                  <span className="text-2xl mr-3">🛒</span>
-                  <span className="text-zinc-800 dark:text-zinc-200">How to Buy from China</span>
+                  <span className="text-2xl mr-3">⚽</span>
+                  <span className="text-zinc-800 dark:text-zinc-200">Gear Guide</span>
                 </Link>
               </li>
               <li>
                 <Link 
-                  href="/stores" 
+                  href="/buying" 
                   className="flex items-center p-4 bg-zinc-50 dark:bg-zinc-800/50 rounded-lg border border-zinc-200 dark:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-700/50 transition-colors"
                 >
-                  <span className="text-2xl mr-3">🏪</span>
-                  <span className="text-zinc-800 dark:text-zinc-200">Featured Stores</span>
+                  <span className="text-2xl mr-3">🛡️</span>
+                  <span className="text-zinc-800 dark:text-zinc-200">Buying Guides</span>
                 </Link>
               </li>
               <li>
                 <Link 
-                  href="/blog" 
+                  href="/training" 
                   className="flex items-center p-4 bg-zinc-50 dark:bg-zinc-800/50 rounded-lg border border-zinc-200 dark:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-700/50 transition-colors"
                 >
-                  <span className="text-2xl mr-3">📝</span>
-                  <span className="text-zinc-800 dark:text-zinc-200">Blog</span>
+                  <span className="text-2xl mr-3">🏃‍♂️</span>
+                  <span className="text-zinc-800 dark:text-zinc-200">Training & Health</span>
                 </Link>
               </li>
               <li>
@@ -254,7 +254,7 @@ export default function Page() {
                   href="/contact" 
                   className="flex items-center p-4 bg-zinc-50 dark:bg-zinc-800/50 rounded-lg border border-zinc-200 dark:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-700/50 transition-colors"
                 >
-                  <span className="text-2xl mr-3">📞</span>
+                  <span className="text-2xl mr-3">💬</span>
                   <span className="text-zinc-800 dark:text-zinc-200">Contact Us</span>
                 </Link>
               </li>
@@ -263,10 +263,10 @@ export default function Page() {
           
           {/* 轻提示 */}
           <p className="text-sm text-zinc-400 mt-8 italic text-center">
-            More guides coming soon — we're adding new ones weekly.
+            More guides coming soon — we're adding new sports guides weekly.
           </p>
         </div>
       </div>
     </Container>
   )
-} 
+}

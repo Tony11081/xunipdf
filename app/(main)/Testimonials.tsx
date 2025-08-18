@@ -68,140 +68,140 @@ const Testimonial = ({ quote, author, city, country, flag, index }: TestimonialP
 export function Testimonials() {
   const testimonials = [
     {
-      quote: "I finally managed to buy from a Chinese shop without using Google Translate 10 times.",
+      quote: "Finally found the perfect soccer cleats size guide. No more guessing between US and European sizing.",
       author: "Emily J.",
       city: "San Diego",
       country: "USA",
       flag: "🇺🇸"
     },
     {
-      quote: "Weidian was a black box to me — now it feels as easy as Amazon.",
+      quote: "Their jersey authenticity guide saved me from buying a fake Barcelona shirt. Worth every penny.",
       author: "Daniel K.",
       city: "London",
       country: "UK",
       flag: "🇬🇧"
     },
     {
-      quote: "Your guide helped me get sneakers from China shipped to Berlin. Worked flawlessly.",
+      quote: "The gear care tips extended my running shoes' life by months. My marathon training gear lasts longer now.",
       author: "Leon M.",
       city: "Berlin",
       country: "Germany",
       flag: "🇩🇪"
     },
     {
-      quote: "I've ordered 20+ items from Taobao thanks to this platform. Customer service was super helpful.",
+      quote: "As a basketball coach, their training guides helped me prevent player injuries. Game changer.",
       author: "Sophia R.",
       city: "Toronto",
       country: "Canada",
       flag: "🇨🇦"
     },
     {
-      quote: "Found some amazing Korean skincare products that aren't sold in Europe. All arrived perfectly.",
+      quote: "Found authentic fan gear for my team that's not available in Sweden. Quality was perfect.",
       author: "Anna L.",
       city: "Stockholm",
       country: "Sweden",
       flag: "🇸🇪"
     },
     {
-      quote: "The shipping guide saved me so much money compared to using an expensive agent service.",
+      quote: "Their buying guide helped me avoid counterfeit sports equipment. Honest, no-nonsense advice.",
       author: "Maximilian P.",
       city: "Vienna",
       country: "Austria",
       flag: "🇦🇹"
     },
     {
-      quote: "Love how the guide breaks down Xiaohongshu — I found limited edition collectibles at great prices.",
+      quote: "The sizing conversion chart for tennis rackets was spot on. Perfect grip size recommendation.",
       author: "Takashi Y.",
       city: "Tokyo",
       country: "Japan",
       flag: "🇯🇵"
     },
     {
-      quote: "Got vintage tea sets from China that would cost 4x more in boutiques here in Paris.",
+      quote: "Tactical analysis made simple — now I understand pressing and transitions like never before.",
       author: "Claire D.",
       city: "Paris",
       country: "France",
       flag: "🇫🇷"
     },
     {
-      quote: "The platform's translation tools helped me communicate with sellers easily.",
+      quote: "Fan travel guide saved me hundreds on Champions League away days. Great accommodation tips.",
       author: "Marco V.",
       city: "Rome",
       country: "Italy",
       flag: "🇮🇹"
     },
     {
-      quote: "As a fashion designer, accessing Chinese fabric markets has been a game changer for my business.",
+      quote: "Their football boot breakdown helped me choose based on playing surface. No more blisters!",
       author: "Isabella C.",
       city: "Barcelona",
       country: "Spain",
       flag: "🇪🇸"
     },
     {
-      quote: "The payment guide made international transactions so much easier than I expected.",
+      quote: "Training schedule for beginners was perfect. Started running 5Ks without injuries.",
       author: "Thomas W.",
       city: "Sydney",
       country: "Australia",
       flag: "🇦🇺"
     },
     {
-      quote: "I've furnished my entire new apartment with items from China. Saved at least 60% on costs.",
+      quote: "Jersey washing guide kept all my team colors vibrant. Numbers haven't peeled once.",
       author: "Laura B.",
       city: "Amsterdam",
       country: "Netherlands",
       flag: "🇳🇱"
     },
     {
-      quote: "Found authentic Asian ingredients that are impossible to find locally. The guide was spot on.",
+      quote: "Recovery routine recommendations cut my muscle soreness in half. Training consistency improved.",
       author: "Michael O.",
       city: "Dublin",
       country: "Ireland",
       flag: "🇮🇪"
     },
     {
-      quote: "Navigating Chinese electronics markets was a nightmare before — now it's my go-to method.",
+      quote: "Gym equipment guides helped me set up a home workout space within budget. No scams.",
       author: "Pavel K.",
       city: "Prague",
       country: "Czech Republic",
       flag: "🇨🇿"
     },
     {
-      quote: "Their shipping calculator saved me from unexpected customs fees. Everything was clear upfront.",
+      quote: "Match day etiquette tips made my first away game experience amazing. Felt like a local fan.",
       author: "Nina S.",
       city: "Oslo",
       country: "Norway",
       flag: "🇳🇴"
     },
     {
-      quote: "Found unique handcrafted jewelry pieces that get compliments every time I wear them.",
+      quote: "Swimming gear recommendations were perfect for my triathlon training. Quality lasted all season.",
       author: "Maria F.",
       city: "Mexico City",
       country: "Mexico",
       flag: "🇲🇽"
     },
     {
-      quote: "Getting gaming equipment from China has cut my costs by 40%. Delivery was faster than expected.",
+      quote: "Injury prevention tips for runners saved my knees. Three marathons with zero issues.",
       author: "David L.",
       city: "Seoul",
       country: "South Korea",
       flag: "🇰🇷"
     },
     {
-      quote: "Perfect for sourcing materials for my small business. Customer support responded same day.",
+      quote: "Youth coaching drills from their training section made practice more engaging for kids.",
       author: "Emma H.",
       city: "Wellington",
       country: "New Zealand",
       flag: "🇳🇿"
     },
     {
-      quote: "The platform helped me navigate Chinese New Year closures and plan my orders strategically.",
+      quote: "Authentic vs replica jersey guide helped me make informed purchases. No regrets anymore.",
       author: "Raj P.",
       city: "Singapore",
       country: "Singapore",
       flag: "🇸🇬"
     },
     {
-      quote: "I collect rare vinyl records and found shops on Taobao with incredible selection thanks to the guides.",
+      quote: "Cycling gear maintenance schedule keeps my bike running smooth. Extended component life significantly.",
       author: "Andre M.",
       city: "Rio de Janeiro",
       country: "Brazil",
@@ -217,7 +217,7 @@ export function Testimonials() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          Loved by 10,000+ users worldwide
+          Trusted by sports fans worldwide
         </motion.h2>
         <motion.p 
           className="mt-2 text-zinc-600 dark:text-zinc-400 text-sm"
@@ -225,7 +225,7 @@ export function Testimonials() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
         >
-          Here&apos;s what our users say about using ShopChina:
+          Here&apos;s what athletes and fans say about Kkgool:
         </motion.p>
       </div>
 
