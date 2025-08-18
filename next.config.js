@@ -19,9 +19,54 @@ const nextConfig = {
 
   experimental: {
     taint: true,
+    optimizePackageImports: ['framer-motion', '@radix-ui/react-dialog', '@radix-ui/react-hover-card'],
   },
 
-  webpack: (config, { isServer }) => {
+  // Performance optimizations
+  swcMinify: true,
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+
+  webpack: (config, { isServer, dev }) => {
+    // Code splitting optimizations
+    if (!dev && !isServer) {
+      config.optimization.splitChunks = {
+        chunks: 'all',
+        cacheGroups: {
+          default: false,
+          vendors: false,
+          framework: {
+            chunks: 'all',
+            name: 'framework',
+            test: /(?<!node_modules.*)[\\/]node_modules[\\/](react|react-dom|scheduler|prop-types|use-subscription)[\\/]/,
+            priority: 40,
+            enforce: true,
+          },
+          lib: {
+            test(module) {
+              return (
+                module.size() > 160000 &&
+                /node_modules[\\/]/.test(module.identifier())
+              )
+            },
+            name(module) {
+              const hash = require('crypto').createHash('sha1')
+              hash.update(module.identifier())
+              return hash.digest('hex').substring(0, 8)
+            },
+            priority: 30,
+            minChunks: 1,
+            reuseExistingChunk: true,
+          },
+          commons: {
+            name: 'commons',
+            minChunks: 2,
+            priority: 20,
+          },
+        },
+      }
+    }
     // polyfill Node.js模块
     if (!isServer) {
       config.resolve.fallback = {
@@ -52,6 +97,17 @@ const nextConfig = {
       );
     }
     
+    // Bundle analyzer in development
+    if (process.env.ANALYZE === 'true') {
+      const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+      config.plugins.push(
+        new BundleAnalyzerPlugin({
+          analyzerMode: 'server',
+          openAnalyzer: true,
+        })
+      )
+    }
+
     return config;
   },
 

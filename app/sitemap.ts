@@ -7,33 +7,99 @@ const CACHE_KEY = 'sitemap:cache'
 const CACHE_TTL = 3600 // 1小时缓存
 
 async function generateSitemap(): Promise<MetadataRoute.Sitemap> {
-  // 静态路由
-  const staticRoutes = [
+  // 主要静态路由 - 高优先级
+  const mainRoutes = [
     {
       url: url('/').href,
       lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 1,
+      changeFrequency: 'daily' as const,
+      priority: 1.0,
     },
     {
-      url: url('/blog').href,
+      url: url('/gear').href,
       lastModified: new Date(),
-      changeFrequency: 'daily',
+      changeFrequency: 'daily' as const,
+      priority: 0.9,
+    },
+    {
+      url: url('/guides').href,
+      lastModified: new Date(),
+      changeFrequency: 'daily' as const,
+      priority: 0.9,
+    },
+    {
+      url: url('/training').href,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
       priority: 0.8,
     },
     {
+      url: url('/tactics').href,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
+    {
+      url: url('/buying').href,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
+    {
+      url: url('/travel').href,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
+    },
+  ] satisfies MetadataRoute.Sitemap
+
+  // 博客和内容路由
+  const contentRoutes = [
+    {
+      url: url('/blog').href,
+      lastModified: new Date(),
+      changeFrequency: 'daily' as const,
+      priority: 0.8,
+    },
+  ] satisfies MetadataRoute.Sitemap
+
+  // 其他页面路由 - 中等优先级
+  const secondaryRoutes = [
+    {
       url: url('/about').href,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.5,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
     },
     {
       url: url('/contact').href,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    },
+    {
+      url: url('/search').href,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
       priority: 0.5,
     },
+    {
+      url: url('/guestbook').href,
+      lastModified: new Date(),
+      changeFrequency: 'daily' as const,
+      priority: 0.4,
+    },
   ] satisfies MetadataRoute.Sitemap
+
+  // 分类页面路由
+  const categoryRoutes = [
+    'gear', 'buying', 'training', 'tactics', 'travel'
+  ].map(category => ({
+    url: url(`/categories/${category}`).href,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  })) satisfies MetadataRoute.Sitemap
 
   try {
     // 获取所有博客文章
@@ -45,13 +111,35 @@ async function generateSitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.6,
-    }))
+    })) satisfies MetadataRoute.Sitemap
+
+    // 指南页面路由（模拟数据 - 实际应从CMS获取）
+    const guideRoutes = [
+      'soccer-cleat-buying-guide-2024',
+      'how-to-spot-fake-jerseys',
+      'jersey-care-washing-guide',
+      'running-shoe-sizing-guide',
+      'injury-prevention-weekend-warriors',
+      'understanding-football-formations'
+    ].map(slug => ({
+      url: url(`/guides/${slug}`).href,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })) satisfies MetadataRoute.Sitemap
 
     // 合并所有路由
-    return [...staticRoutes, ...blogRoutes]
+    return [
+      ...mainRoutes,
+      ...contentRoutes, 
+      ...categoryRoutes,
+      ...blogRoutes,
+      ...guideRoutes,
+      ...secondaryRoutes
+    ]
   } catch (error) {
-    console.error('[Sitemap] Failed to fetch blog posts:', error)
-    return staticRoutes
+    console.error('[Sitemap] Failed to fetch content:', error)
+    return [...mainRoutes, ...contentRoutes, ...secondaryRoutes]
   }
 }
 

@@ -43,8 +43,9 @@ export async function GET() {
 }
 
 function generateImageSitemap(posts: any[]) {
-  const urlset = posts
-    .filter(post => post.mainImage?.asset?.url) // 只包含有主图的文章
+  // 博客文章图片
+  const blogImages = posts
+    .filter(post => post.mainImage?.asset?.url)
     .map(post => {
       const loc = url(`/blog/${post.slug}`).href
       const imageUrl = post.mainImage.asset.url
@@ -61,6 +62,39 @@ function generateImageSitemap(posts: any[]) {
       `
     })
     .join('')
+
+  // 静态图片（OG图片、头像等）
+  const staticImages = [
+    {
+      loc: url('/').href,
+      imageUrl: url('/og_zh.png').href,
+      title: 'Kkgool - Expert Sports Gear Reviews & Guides',
+      caption: 'Your trusted source for sports equipment reviews and buying guides'
+    },
+    {
+      loc: url('/gear').href,
+      imageUrl: url('/og_zh.png').href,
+      title: 'Sports Gear Reviews & Recommendations',
+      caption: 'In-depth reviews of sports equipment and gear'
+    },
+    {
+      loc: url('/guides').href,
+      imageUrl: url('/og_zh.png').href,
+      title: 'Sports & Training Guides',
+      caption: 'Comprehensive guides for sports and training'
+    }
+  ].map(item => `
+    <url>
+      <loc>${item.loc}</loc>
+      <image:image>
+        <image:loc>${item.imageUrl}</image:loc>
+        <image:title>${escapeXml(item.title)}</image:title>
+        <image:caption>${escapeXml(item.caption)}</image:caption>
+      </image:image>
+    </url>
+  `).join('')
+
+  const urlset = blogImages + staticImages
 
   return `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
