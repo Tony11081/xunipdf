@@ -14,7 +14,9 @@
       "Bash(git bundle create:*)",
       "Bash(npm run lint)",
       "Bash(npm install)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(npm run build:*)",
+      "Bash(rm:*)"
     ],
     "deny": []
   }

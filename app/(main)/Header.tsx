@@ -21,7 +21,7 @@ import {
   UserArrowLeftIcon,
 } from '~/assets'
 import { Container } from '~/components/ui/Container'
-import { Search } from '~/components/ui/Search'
+// import { Search } from '~/components/ui/Search'
 import { clamp } from '~/lib/math'
 
 export function Header() {
@@ -119,21 +119,21 @@ export function Header() {
                 <div className="hidden md:block">
                   <NavigationBar.Desktop />
                 </div>
-                <div className="hidden md:block flex-1 max-w-sm">
+                {/* <div className="hidden md:block flex-1 max-w-sm">
                   <Search 
                     placeholder="Search guides, gear..."
                     className="w-full"
                   />
-                </div>
+                </div> */
               </motion.div>
               <div className="flex flex-1 justify-end md:justify-center">
                 <div className="flex items-center gap-2 md:hidden">
-                  <div className="w-48">
+                  {/* <div className="w-48">
                     <Search 
                       placeholder="Search..."
                       className="w-full"
                     />
-                  </div>
+                  </div> */}
                   <ThemeSwitcher />
                   <NavigationBar.Mobile className="relative z-50" />
                 </div>

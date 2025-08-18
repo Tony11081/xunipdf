@@ -1,5 +1,3 @@
-'use client'
-
 // Supported languages
 export const supportedLanguages = {
   en: {
@@ -583,28 +581,3 @@ export class I18nService {
   }
 }
 
-// React hook for translations
-export function useTranslation() {
-  const [currentLanguage, setCurrentLanguage] = React.useState(I18nService.getCurrentLanguage())
-
-  const changeLanguage = React.useCallback((language: SupportedLanguage) => {
-    I18nService.setLanguage(language)
-    setCurrentLanguage(language)
-  }, [])
-
-  const t = React.useCallback((key: string, params?: Record<string, string | number>) => {
-    return I18nService.t(key, params, currentLanguage)
-  }, [currentLanguage])
-
-  const formatPlural = React.useCallback((key: string, count: number, params?: Record<string, string | number>) => {
-    return I18nService.formatPlural(key, count, params, currentLanguage)
-  }, [currentLanguage])
-
-  return {
-    currentLanguage,
-    changeLanguage,
-    t,
-    formatPlural,
-    availableLanguages: supportedLanguages
-  }
-}
