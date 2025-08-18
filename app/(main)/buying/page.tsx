@@ -3,7 +3,7 @@ import Balancer from 'react-wrap-balancer'
 import { Container } from '~/components/ui/Container'
 import { Newsletter } from '~/app/(main)/Newsletter'
 
-// 可信度等级组件
+// Trust level component
 function TrustLevel({ level, color = 'green' }) {
   const colorClasses = {
     green: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400',
@@ -19,7 +19,7 @@ function TrustLevel({ level, color = 'green' }) {
   );
 }
 
-// 购买指南卡片
+// Buying guide card
 function BuyingGuide({ title, description, category, difficulty, trustLevel, icon, readTime, isEssential = false }) {
   return (
     <div className="bg-zinc-50 dark:bg-zinc-800/50 p-6 rounded-lg border border-zinc-200 dark:border-zinc-700 hover:shadow-md transition-all">
@@ -51,7 +51,7 @@ function BuyingGuide({ title, description, category, difficulty, trustLevel, ico
   );
 }
 
-// 警告信号卡片
+// Red flag warning card
 function RedFlag({ icon, title, warning, severity }) {
   const severityColors = {
     'High': 'border-red-500 dark:border-red-400 bg-red-50 dark:bg-red-900/20',
@@ -79,7 +79,7 @@ function RedFlag({ icon, title, warning, severity }) {
   );
 }
 
-// 官方零售商卡片
+// Official retailer card
 function OfficialRetailer({ name, description, sports, verificationTips, website, reliability }) {
   return (
     <div className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 p-6 rounded-lg border border-green-200 dark:border-green-800">
@@ -268,7 +268,7 @@ export default function Page() {
         </p>
       </header>
 
-      {/* 警告信号识别 */}
+      {/* Red flag identification */}
       <div className="mt-12">
         <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">🚨 Red Flags to Avoid</h2>
         <p className="text-zinc-600 dark:text-zinc-400 mb-6">Warning signs that indicate potential counterfeits or fraudulent sellers</p>
@@ -285,7 +285,7 @@ export default function Page() {
         </div>
       </div>
 
-      {/* 官方认证零售商 */}
+      {/* Verified official retailers */}
       <div className="mt-16">
         <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">✅ Verified Official Retailers</h2>
         <p className="text-zinc-600 dark:text-zinc-400 mb-8">Trusted sources for authentic sports merchandise with genuine manufacturer warranties</p>
@@ -305,7 +305,7 @@ export default function Page() {
         </div>
       </div>
 
-      {/* 必备购买指南 */}
+      {/* Essential buying guides */}
       <div className="mt-16">
         <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">Essential Buying Guides</h2>
         <p className="text-zinc-600 dark:text-zinc-400 mb-8">Critical knowledge every sports fan needs before making purchases</p>
@@ -327,7 +327,7 @@ export default function Page() {
         </div>
       </div>
 
-      {/* 全部购买指南 */}
+      {/* Complete buying guide library */}
       <div className="mt-16">
         <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-8">Complete Buying Guide Library</h2>
         
@@ -348,7 +348,7 @@ export default function Page() {
         </div>
       </div>
 
-      {/* 快速验证清单 */}
+      {/* Quick authentication checklist */}
       <div className="mt-16 p-8 bg-gradient-to-r from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 rounded-xl border border-blue-200 dark:border-blue-800">
         <h3 className="text-xl font-bold text-blue-900 dark:text-blue-100 mb-4">Quick Authentication Checklist</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -380,7 +380,7 @@ export default function Page() {
         </div>
       </div>
 
-      {/* 消费者保护资源 */}
+      {/* Consumer protection resources */}
       <div className="mt-16 pt-8 border-t border-zinc-200 dark:border-zinc-700">
         <h3 className="text-xl font-semibold text-zinc-800 dark:text-zinc-200 mb-6">Consumer Protection Resources</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -413,7 +413,7 @@ export default function Page() {
         </div>
       </div>
 
-      {/* 订阅区域 */}
+      {/* Newsletter subscription */}
       <div className="mt-16 pt-8 border-t border-zinc-200 dark:border-zinc-700 text-center">
         <h3 className="text-xl font-semibold text-zinc-800 dark:text-zinc-200 mb-4">Stay Protected</h3>
         <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-6">

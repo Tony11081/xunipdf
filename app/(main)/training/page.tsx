@@ -3,7 +3,7 @@ import Balancer from 'react-wrap-balancer'
 import { Container } from '~/components/ui/Container'
 import { Newsletter } from '~/app/(main)/Newsletter'
 
-// 训练等级组件
+// Training level component
 function TrainingLevel({ level, color = 'green' }) {
   const colorClasses = {
     green: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400',
@@ -19,7 +19,7 @@ function TrainingLevel({ level, color = 'green' }) {
   );
 }
 
-// 训练文章卡片组件
+// Training article card component
 function TrainingCard({ title, description, duration, level, category, icon, isPopular = false }) {
   return (
     <div className="bg-zinc-50 dark:bg-zinc-800/50 p-6 rounded-lg border border-zinc-200 dark:border-zinc-700 hover:shadow-md transition-all">
@@ -50,7 +50,7 @@ function TrainingCard({ title, description, duration, level, category, icon, isP
   );
 }
 
-// 快速提示卡片
+// Quick tip card
 function QuickTip({ icon, title, tip }) {
   return (
     <div className="bg-teal-50 dark:bg-teal-900/20 p-4 rounded-lg border border-teal-200 dark:border-teal-800">
@@ -169,7 +169,7 @@ export default function Page() {
         </p>
       </header>
 
-      {/* 快速提示区域 */}
+      {/* Quick tips section */}
       <div className="mt-12">
         <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-6">Quick Health Tips</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -179,7 +179,7 @@ export default function Page() {
         </div>
       </div>
 
-      {/* 热门训练计划 */}
+      {/* Popular training programs */}
       <div className="mt-16">
         <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">Popular Training Programs</h2>
         <p className="text-zinc-600 dark:text-zinc-400 mb-8">Most requested guides by our community</p>
@@ -200,7 +200,7 @@ export default function Page() {
         </div>
       </div>
 
-      {/* 分类训练指南 */}
+      {/* All training guides */}
       <div className="mt-16">
         <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-8">All Training Guides</h2>
         
@@ -220,7 +220,7 @@ export default function Page() {
         </div>
       </div>
 
-      {/* 健康资源链接 */}
+      {/* Related health resources */}
       <div className="mt-16 pt-8 border-t border-zinc-200 dark:border-zinc-700">
         <h3 className="text-xl font-semibold text-zinc-800 dark:text-zinc-200 mb-6">Related Health Resources</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -259,7 +259,7 @@ export default function Page() {
         </div>
       </div>
 
-      {/* 订阅区域 */}
+      {/* Newsletter subscription */}
       <div className="mt-16 pt-8 border-t border-zinc-200 dark:border-zinc-700 text-center">
         <h3 className="text-xl font-semibold text-zinc-800 dark:text-zinc-200 mb-4">Get New Training Plans Weekly</h3>
         <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-6">

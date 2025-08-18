@@ -3,7 +3,7 @@ import Balancer from 'react-wrap-balancer'
 import { Container } from '~/components/ui/Container'
 import { Newsletter } from '~/app/(main)/Newsletter'
 
-// 战术复杂度组件
+// Tactical complexity component
 function TacticLevel({ level, color = 'green' }) {
   const colorClasses = {
     green: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400',
@@ -19,7 +19,7 @@ function TacticLevel({ level, color = 'green' }) {
   );
 }
 
-// 战术文章卡片
+// Tactical article card
 function TacticCard({ title, description, sport, level, category, icon, readTime, isPopular = false }) {
   return (
     <div className="bg-zinc-50 dark:bg-zinc-800/50 p-6 rounded-lg border border-zinc-200 dark:border-zinc-700 hover:shadow-md transition-all">
@@ -51,7 +51,7 @@ function TacticCard({ title, description, sport, level, category, icon, readTime
   );
 }
 
-// 战术核心概念卡片
+// Core tactical concept card
 function ConceptCard({ icon, title, explanation, examples }) {
   return (
     <div className="bg-gradient-to-br from-teal-50 to-blue-50 dark:from-teal-900/20 dark:to-blue-900/20 p-6 rounded-lg border border-teal-200 dark:border-teal-800">
@@ -68,7 +68,7 @@ function ConceptCard({ icon, title, explanation, examples }) {
   );
 }
 
-// 阵型可视化组件
+// Formation diagram component
 function FormationDiagram({ formation, description, advantages, disadvantages }) {
   return (
     <div className="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border border-green-200 dark:border-green-800">
@@ -77,7 +77,7 @@ function FormationDiagram({ formation, description, advantages, disadvantages })
         <p className="text-green-700 dark:text-green-300 mt-1">{description}</p>
       </div>
       
-      {/* 简化的足球场图示 */}
+      {/* Simplified football field diagram */}
       <div className="bg-green-200 dark:bg-green-800 p-4 rounded-lg mb-4 text-center">
         <div className="text-4xl mb-2">⚽</div>
         <div className="text-sm text-green-800 dark:text-green-200 font-mono">
@@ -288,7 +288,7 @@ export default function Page() {
         </p>
       </header>
 
-      {/* 核心概念 */}
+      {/* Core concepts */}
       <div className="mt-12">
         <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-6">Core Tactical Concepts</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -304,7 +304,7 @@ export default function Page() {
         </div>
       </div>
 
-      {/* 阵型分析 */}
+      {/* Formation analysis */}
       <div className="mt-16">
         <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">Popular Football Formations</h2>
         <p className="text-zinc-600 dark:text-zinc-400 mb-8">Understanding the strengths and weaknesses of common tactical setups</p>
@@ -322,7 +322,7 @@ export default function Page() {
         </div>
       </div>
 
-      {/* 热门战术指南 */}
+      {/* Trending tactical guides */}
       <div className="mt-16">
         <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">Trending Tactical Guides</h2>
         <p className="text-zinc-600 dark:text-zinc-400 mb-8">Most popular tactical explanations this month</p>
@@ -344,7 +344,7 @@ export default function Page() {
         </div>
       </div>
 
-      {/* 全部战术指南 */}
+      {/* All tactical guides */}
       <div className="mt-16">
         <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-8">All Tactical Guides</h2>
         
@@ -365,7 +365,7 @@ export default function Page() {
         </div>
       </div>
 
-      {/* 战术术语词汇表预览 */}
+      {/* Tactical terminology preview */}
       <div className="mt-16 p-8 bg-gradient-to-r from-blue-50 to-teal-50 dark:from-blue-900/20 dark:to-teal-900/20 rounded-xl border border-blue-200 dark:border-blue-800">
         <h3 className="text-xl font-bold text-blue-900 dark:text-blue-100 mb-4">Quick Tactical Glossary</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -404,7 +404,7 @@ export default function Page() {
         </div>
       </div>
 
-      {/* 相关资源 */}
+      {/* Related resources */}
       <div className="mt-16 pt-8 border-t border-zinc-200 dark:border-zinc-700">
         <h3 className="text-xl font-semibold text-zinc-800 dark:text-zinc-200 mb-6">Related Resources</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -443,7 +443,7 @@ export default function Page() {
         </div>
       </div>
 
-      {/* 订阅区域 */}
+      {/* Newsletter subscription */}
       <div className="mt-16 pt-8 border-t border-zinc-200 dark:border-zinc-700 text-center">
         <h3 className="text-xl font-semibold text-zinc-800 dark:text-zinc-200 mb-4">Master Tactics Weekly</h3>
         <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-6">

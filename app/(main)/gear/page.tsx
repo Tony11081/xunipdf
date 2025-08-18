@@ -3,7 +3,7 @@ import Balancer from 'react-wrap-balancer'
 import { Container } from '~/components/ui/Container'
 import { Newsletter } from '~/app/(main)/Newsletter'
 
-// 装备等级组件
+// Gear level component
 function GearLevel({ level, color = 'green' }) {
   const colorClasses = {
     green: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400',
@@ -20,7 +20,7 @@ function GearLevel({ level, color = 'green' }) {
   );
 }
 
-// 装备指南卡片
+// Gear guide card
 function GearCard({ title, description, category, priceRange, durability, icon, readTime, isRecommended = false }) {
   return (
     <div className="bg-zinc-50 dark:bg-zinc-800/50 p-6 rounded-lg border border-zinc-200 dark:border-zinc-700 hover:shadow-md transition-all">
@@ -52,7 +52,7 @@ function GearCard({ title, description, category, priceRange, durability, icon, 
   );
 }
 
-// 装备护理提示卡片
+// Equipment care tip card
 function CareTip({ icon, title, tip, equipment }) {
   return (
     <div className="bg-teal-50 dark:bg-teal-900/20 p-4 rounded-lg border border-teal-200 dark:border-teal-800">
@@ -70,7 +70,7 @@ function CareTip({ icon, title, tip, equipment }) {
   );
 }
 
-// 尺寸指南卡片
+// Sizing guide card
 function SizingGuide({ brand, description, keyTips, fitType, popularSizes }) {
   return (
     <div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 p-6 rounded-lg border border-blue-200 dark:border-blue-800">
@@ -97,7 +97,7 @@ function SizingGuide({ brand, description, keyTips, fitType, popularSizes }) {
   );
 }
 
-// 预算指南卡片
+// Budget guide card
 function BudgetGuide({ level, description, priceRange, recommendations, duration }) {
   const levelColors = {
     'Beginner': 'from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 border-green-200 dark:border-green-800',
@@ -304,7 +304,7 @@ export default function Page() {
         </p>
       </header>
 
-      {/* 装备护理贴士 */}
+      {/* Essential care tips */}
       <div className="mt-12">
         <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-6">Essential Care Tips</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -320,7 +320,7 @@ export default function Page() {
         </div>
       </div>
 
-      {/* 尺寸指南 */}
+      {/* Brand sizing guides */}
       <div className="mt-16">
         <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">Brand Sizing Guides</h2>
         <p className="text-zinc-600 dark:text-zinc-400 mb-8">Understanding how different brands fit to avoid returns and ensure comfort</p>
@@ -339,7 +339,7 @@ export default function Page() {
         </div>
       </div>
 
-      {/* 预算指南 */}
+      {/* Budget planning guide */}
       <div className="mt-16">
         <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">Budget Planning Guide</h2>
         <p className="text-zinc-600 dark:text-zinc-400 mb-8">How much to spend based on your involvement level and goals</p>
@@ -358,7 +358,7 @@ export default function Page() {
         </div>
       </div>
 
-      {/* 推荐装备指南 */}
+      {/* Recommended gear guides */}
       <div className="mt-16">
         <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">Recommended Gear Guides</h2>
         <p className="text-zinc-600 dark:text-zinc-400 mb-8">Most popular and essential equipment guides for sports enthusiasts</p>
@@ -380,7 +380,7 @@ export default function Page() {
         </div>
       </div>
 
-      {/* 全部装备指南 */}
+      {/* Complete gear library */}
       <div className="mt-16">
         <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-8">Complete Gear Library</h2>
         
@@ -401,7 +401,7 @@ export default function Page() {
         </div>
       </div>
 
-      {/* 购买清单工具 */}
+      {/* Smart shopping checklist */}
       <div className="mt-16 p-8 bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-xl border border-amber-200 dark:border-amber-800">
         <h3 className="text-xl font-bold text-amber-900 dark:text-amber-100 mb-4">Smart Shopping Checklist</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -433,7 +433,7 @@ export default function Page() {
         </div>
       </div>
 
-      {/* 相关资源 */}
+      {/* Related resources */}
       <div className="mt-16 pt-8 border-t border-zinc-200 dark:border-zinc-700">
         <h3 className="text-xl font-semibold text-zinc-800 dark:text-zinc-200 mb-6">Related Resources</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -472,7 +472,7 @@ export default function Page() {
         </div>
       </div>
 
-      {/* 订阅区域 */}
+      {/* Newsletter subscription */}
       <div className="mt-16 pt-8 border-t border-zinc-200 dark:border-zinc-700 text-center">
         <h3 className="text-xl font-semibold text-zinc-800 dark:text-zinc-200 mb-4">Gear Updates & Reviews</h3>
         <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-6">
