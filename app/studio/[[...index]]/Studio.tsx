@@ -33,30 +33,44 @@ function SanityConfigError() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
         </div>
-        <h1 className="text-2xl font-bold text-center text-gray-800 mb-4">Sanity Studio Configuration Error</h1>
+        <h1 className="text-2xl font-bold text-center text-gray-800 mb-4">Sanity Studio Configuration</h1>
         <div className="mb-6 text-gray-600">
           <p className="mb-4">
-            The following environment variables are missing or undefined:
+            请在 <code className="bg-gray-100 px-2 py-1 rounded">.env.local</code> 文件中添加以下环境变量：
           </p>
-          <ul className="list-disc pl-6 mb-4 text-red-600 font-mono">
-            {missingVars.map(varName => (
-              <li key={varName}>{varName}</li>
-            ))}
-          </ul>
-          <p className="text-sm text-gray-600 mb-2">
-            These variables are required for Sanity Studio to function properly.
-          </p>
-          <p className="text-sm text-gray-600">
-            Please add them to your <span className="font-mono bg-gray-100 px-1 py-0.5 rounded">.env</span> file or deployment environment variables.
-          </p>
+          <div className="bg-gray-900 text-green-400 p-4 rounded-lg font-mono text-sm mb-4">
+            <div className="mb-2"># Sanity CMS Configuration</div>
+            <div>NEXT_PUBLIC_SANITY_PROJECT_ID="your-project-id"</div>
+            <div>NEXT_PUBLIC_SANITY_DATASET="production"</div>
+            <div>SANITY_API_TOKEN="your-api-token"</div>
+          </div>
+          {missingVars.length > 0 && (
+            <div className="mb-4">
+              <p className="text-red-600 font-medium mb-2">缺失的环境变量：</p>
+              <ul className="list-disc pl-6 text-red-600 font-mono">
+                {missingVars.map(varName => (
+                  <li key={varName}>{varName}</li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
         <div className="border-t border-gray-200 pt-4">
-          <h3 className="font-medium text-gray-700 mb-2">How to fix:</h3>
+          <h3 className="font-medium text-gray-700 mb-2">如何配置：</h3>
           <ol className="list-decimal pl-6 text-sm text-gray-600 space-y-2">
-            <li>Create or update your <span className="font-mono">.env</span> file with the missing variables</li>
-            <li>Make sure the values are correct and match your Sanity project settings</li>
-            <li>Restart your development server or redeploy</li>
+            <li>在项目根目录创建或编辑 <code className="bg-gray-100 px-1 py-0.5 rounded">.env.local</code> 文件</li>
+            <li>添加上述环境变量，将值替换为您的 Sanity 项目信息</li>
+            <li>重启开发服务器：<code className="bg-gray-100 px-1 py-0.5 rounded">pnpm dev</code></li>
+            <li>访问 <a href="/studio" className="text-blue-600 hover:underline">/studio</a> 即可使用</li>
           </ol>
+        </div>
+        <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+          <h4 className="font-medium text-blue-800 mb-2">💡 在哪里找到这些值？</h4>
+          <div className="text-sm text-blue-700 space-y-1">
+            <p><strong>PROJECT_ID</strong>: 登录 sanity.io → 选择项目 → Settings → API</p>
+            <p><strong>DATASET</strong>: 通常是 "production" 或 "development"</p>
+            <p><strong>API_TOKEN</strong>: Settings → API → Tokens → 创建新 token</p>
+          </div>
         </div>
       </div>
     </div>
@@ -69,13 +83,13 @@ export default function Studio() {
   const [debugInfo, setDebugInfo] = useState<string>('')
 
   useEffect(() => {
-    // 直接检查process.env中的变量，而不是通过env.ts导入
+    // 直接检查process.env中的变量
     const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
     const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET
     
     // 调试信息
     setDebugInfo(
-      `PROJECT_ID: ${projectId ? '已设置' : '未设置'}, DATASET: ${dataset ? '已设置' : '未设置'}`
+      `PROJECT_ID: ${projectId ? '✅ 已设置' : '❌ 未设置'}, DATASET: ${dataset ? '✅ 已设置' : '❌ 未设置'}`
     )
     
     // 检查配置是否完整
@@ -84,7 +98,14 @@ export default function Studio() {
 
   // 仅在客户端渲染后显示内容
   if (isConfigComplete === null) {
-    return <div className="w-full h-screen flex items-center justify-center">Loading...</div>
+    return (
+      <div className="w-full h-screen flex items-center justify-center bg-gray-50">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading Sanity Studio...</p>
+        </div>
+      </div>
+    )
   }
 
   // 配置不完整时显示错误信息
@@ -92,9 +113,9 @@ export default function Studio() {
     return (
       <>
         <SanityConfigError />
-        {/* 添加调试信息 */}
-        <div className="fixed bottom-2 right-2 bg-yellow-100 p-2 text-xs rounded">
-          {debugInfo}
+        {/* 调试信息 */}
+        <div className="fixed bottom-4 right-4 bg-yellow-100 border border-yellow-300 p-3 text-xs rounded-lg shadow-lg">
+          <div className="font-mono">{debugInfo}</div>
         </div>
       </>
     )

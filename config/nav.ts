@@ -1,18 +1,24 @@
 export const navigationItems = [
   { href: '/', text: 'Home' },
-  { href: '/gear', text: 'Gear Guide' },
-  { href: '/buying', text: 'Buying Guides' },
-  { href: '/training', text: 'Training & Health' },
-  { href: '/tactics', text: 'Tactics Made Simple' },
-  { href: '/travel', text: 'Fan Travel' },
-  { href: '/guides', text: 'All Guides' }
+  { href: '/store', text: 'Store' },
+  { href: '/shop', text: 'Shop', description: 'Social-friendly shop page' },
+  { href: '/blog', text: 'Blog' },
+  { href: '/about', text: 'About' },
+  { href: '/contact', text: 'Contact' }
 ]
 
-// Category navigation configuration
-export const categoryItems = [
-  { href: '/categories/gear', text: 'Sports Gear' },
-  { href: '/categories/buying', text: 'Buying Guides' },
-  { href: '/categories/training', text: 'Training & Health' },
-  { href: '/categories/tactics', text: 'Tactics' },
-  { href: '/categories/travel', text: 'Fan Travel' },
+// Main navigation for authenticated users
+export const userNavigationItems = [
+  { href: '/orders', text: 'My Orders' },
+  { href: '/downloads', text: 'My Downloads' },
+  { href: '/account', text: 'Account' }
+]
+
+// Admin navigation
+export const adminNavigationItems = [
+  { href: '/admin', text: 'Dashboard' },
+  { href: '/admin/products', text: 'Products' },
+  { href: '/admin/orders', text: 'Orders' },
+  { href: '/admin/customers', text: 'Customers' },
+  { href: '/admin/analytics', text: 'Analytics' }
 ]
