@@ -24,7 +24,8 @@
       "Bash(grep:*)",
       "Bash(touch:*)",
       "Bash(mkdir:*)",
-      "Bash(git remote set-url:*)"
+      "Bash(git remote set-url:*)",
+      "Bash(gh auth:*)"
     ],
     "deny": []
   }
