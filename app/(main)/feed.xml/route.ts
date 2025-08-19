@@ -4,7 +4,7 @@ import { seo } from '~/lib/seo'
 import { getLatestBlogPosts } from '~/sanity/queries'
 import { isSanityConfigComplete } from '~/sanity/env'
 
-export const revalidate = 60 * 60 // 1 hour
+export const revalidate = 3600 // 1 hour
 
 export async function GET() {
   const feed = new RSS({

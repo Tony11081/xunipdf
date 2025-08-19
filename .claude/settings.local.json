@@ -16,7 +16,11 @@
       "Bash(npm install)",
       "Bash(find:*)",
       "Bash(npm run build:*)",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "Bash(npx next build:*)",
+      "Bash(SKIP_ENV_VALIDATION=1 npx next build --no-lint)",
+      "Bash(npm install:*)",
+      "Bash(SKIP_ENV_VALIDATION=1 npm run build)"
     ],
     "deny": []
   }
