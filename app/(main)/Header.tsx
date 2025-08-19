@@ -5,7 +5,6 @@ import {
   SignedOut,
   SignInButton,
   UserButton,
-  useUser,
 } from '@clerk/nextjs'
 import { clsxm } from '@zolplay/utils'
 import {
@@ -124,7 +123,7 @@ export function Header() {
                     placeholder="Search guides, gear..."
                     className="w-full"
                   />
-                </div> */
+                </div> */}
               </motion.div>
               <div className="flex flex-1 justify-end md:justify-center">
                 <div className="flex items-center gap-2 md:hidden">
@@ -165,8 +164,6 @@ export function Header() {
 }
 
 function UserInfo() {
-  const { } = useUser()
-
   return (
     <div className="pointer-events-auto">
       <AnimatePresence>

@@ -20,7 +20,8 @@
       "Bash(npx next build:*)",
       "Bash(SKIP_ENV_VALIDATION=1 npx next build --no-lint)",
       "Bash(npm install:*)",
-      "Bash(SKIP_ENV_VALIDATION=1 npm run build)"
+      "Bash(SKIP_ENV_VALIDATION=1 npm run build)",
+      "Bash(grep:*)"
     ],
     "deny": []
   }
