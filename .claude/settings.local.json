@@ -25,7 +25,8 @@
       "Bash(touch:*)",
       "Bash(mkdir:*)",
       "Bash(git remote set-url:*)",
-      "Bash(gh auth:*)"
+      "Bash(gh auth:*)",
+      "Bash(pnpm install:*)"
     ],
     "deny": []
   }
