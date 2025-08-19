@@ -73,7 +73,7 @@ export function generateSEOMetadata({
         }
       ],
       locale: 'en_US',
-      type: type,
+      type: type === 'product' ? 'website' : type,
       ...(publishedTime && { publishedTime }),
       ...(modifiedTime && { modifiedTime }),
       ...(section && { section }),
