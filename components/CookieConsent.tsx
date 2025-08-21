@@ -117,8 +117,8 @@ export function CookieConsent() {
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} 
         strategy="lazyOnload" 
         onLoad={() => {
-          window.gtag('js', new Date().toISOString(), {});
-          window.gtag('config', GA_MEASUREMENT_ID, {});
+          window.gtag?.('js', new Date().toISOString(), {});
+          window.gtag?.('config', GA_MEASUREMENT_ID, {});
         }}
       />
       
@@ -210,10 +210,3 @@ export function CookieConsent() {
   );
 }
 
-// 全局类型声明
-declare global {
-  interface Window {
-    dataLayer: any[];
-    gtag: (...args: any[]) => void;
-  }
-} 

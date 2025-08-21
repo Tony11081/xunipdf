@@ -230,6 +230,7 @@ export class SocialShareUtils {
 // Global interface for gtag (Google Analytics)
 declare global {
   interface Window {
-    gtag?: (command: string, action: string, params: any) => void
+    dataLayer?: any[];
+    gtag?: (...args: any[]) => void;
   }
 }
