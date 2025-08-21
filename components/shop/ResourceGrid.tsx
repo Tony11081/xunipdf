@@ -170,12 +170,11 @@ export function ResourceGrid({ products, locale }: ResourceGridProps) {
                 
                 <div className="flex gap-2">
                   <Link href={`/${locale}/p/${product.id}`}>
-                    <Button variant="outline" size="sm">
+                    <Button variant="secondary">
                       详情
                     </Button>
                   </Link>
                   <Button 
-                    size="sm"
                     onClick={() => handleQuickBuy(product.id)}
                     className="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600"
                   >
@@ -191,7 +190,7 @@ export function ResourceGrid({ products, locale }: ResourceGridProps) {
       {/* Load More */}
       {products.length >= 6 && (
         <div className="text-center pt-8">
-          <Button variant="outline" size="lg">
+          <Button variant="secondary">
             查看更多资源 →
           </Button>
         </div>

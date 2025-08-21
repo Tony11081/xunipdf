@@ -207,10 +207,10 @@ export function FileUploadManager({
               onChange={handleFileInput}
               className="hidden"
             />
-            <label htmlFor="file-upload">
-              <Button as="span" size="lg" className="cursor-pointer">
+            <label htmlFor="file-upload" className="cursor-pointer">
+              <span className="inline-flex items-center gap-2 justify-center rounded-lg py-2 px-3 text-sm outline-offset-2 transition active:transition-none bg-zinc-800 font-semibold text-zinc-100 hover:bg-zinc-700 active:bg-zinc-800 active:text-zinc-100/70 dark:bg-zinc-200 dark:text-black dark:hover:bg-zinc-300 dark:active:bg-zinc-300/70">
                 📤 选择文件
-              </Button>
+              </span>
             </label>
             
             <div className="text-xs text-gray-500 space-y-1">
