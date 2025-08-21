@@ -117,7 +117,7 @@ export function CookieConsent() {
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} 
         strategy="lazyOnload" 
         onLoad={() => {
-          window.gtag('js', new Date(), {});
+          window.gtag('js', new Date().toISOString(), {});
           window.gtag('config', GA_MEASUREMENT_ID, {});
         }}
       />
