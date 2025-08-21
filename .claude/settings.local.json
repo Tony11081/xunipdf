@@ -28,7 +28,8 @@
       "Bash(gh auth:*)",
       "Bash(pnpm install:*)",
       "Bash(pnpm add:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(echo)"
     ],
     "deny": []
   }
