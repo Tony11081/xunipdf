@@ -25,10 +25,10 @@ export default async function HomePage() {
               Instant download, lifetime access.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Button as={Link} href="/store" size="lg">
+              <Button href="/store" size="lg">
                 Browse Store
               </Button>
-              <Button as={Link} href="/about" variant="outline" size="lg">
+              <Button href="/about" variant="secondary" size="lg">
                 Learn More
               </Button>
             </div>
@@ -121,7 +121,7 @@ export default async function HomePage() {
             </p>
           </div>
           <div className="mt-12 text-center">
-            <Button as={Link} href="/store" size="lg">
+            <Button href="/store" size="lg">
               View All Products
             </Button>
           </div>
