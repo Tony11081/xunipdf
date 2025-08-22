@@ -1,5 +1,5 @@
 export const contact = {
-  support: 'support@kkgool.cc',
-  press: 'press@kkgool.cc',
+  support: 'support@tarotdeck.online',
+  press: 'press@tarotdeck.online',
   whatsapp: '8613462248923'
 }

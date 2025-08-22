@@ -39,7 +39,7 @@ export default function Page() {
             General Inquiries
           </h2>
           <p className="mt-4 text-zinc-600 dark:text-zinc-400">
-            Email: <a href="mailto:support@kkgool.cc" className="text-lime-600 hover:text-lime-800 dark:text-lime-400 dark:hover:text-lime-300">support@kkgool.cc</a>
+            Email: <a href="mailto:support@tarotdeck.online" className="text-lime-600 hover:text-lime-800 dark:text-lime-400 dark:hover:text-lime-300">support@tarotdeck.online</a>
           </p>
           <p className="mt-2 text-zinc-600 dark:text-zinc-400">
             We usually reply within 24–48 hours on business days.
@@ -97,7 +97,7 @@ export default function Page() {
             For brand partnerships, content collaboration, or media inquiries, reach us at:
           </p>
           <p className="mt-4 text-zinc-600 dark:text-zinc-400">
-            Business Contact: <a href="mailto:press@kkgool.cc" className="text-lime-600 hover:text-lime-800 dark:text-lime-400 dark:hover:text-lime-300">press@kkgool.cc</a>
+            Business Contact: <a href="mailto:press@tarotdeck.online" className="text-lime-600 hover:text-lime-800 dark:text-lime-400 dark:hover:text-lime-300">press@tarotdeck.online</a>
           </p>
         </div>
       </div>

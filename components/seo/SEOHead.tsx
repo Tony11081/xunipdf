@@ -46,7 +46,7 @@ export function generateSEOMetadata({
   const seoAuthor = author || defaultSEO.author
 
   // Construct full URL
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://kkgool.com'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://tarotdeck.online'
   const fullUrl = url ? `${baseUrl}${url}` : baseUrl
   const fullImageUrl = seoImage.startsWith('http') ? seoImage : `${baseUrl}${seoImage}`
 
@@ -86,8 +86,8 @@ export function generateSEOMetadata({
       title: seoTitle,
       description: seoDescription,
       images: [fullImageUrl],
-      creator: '@kkgool',
-      site: '@kkgool',
+      creator: '@tarotdeck_online',
+      site: '@tarotdeck_online',
     },
 
     // Additional metadata

@@ -14,16 +14,16 @@ import { seo } from '~/lib/seo'
 import { CookieConsent } from '~/components/CookieConsent'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://kkgool.cc'),
+  metadataBase: new URL('https://tarotdeck.online'),
   title: {
-    default: 'Kkgool — Sports Apparel & Fan Culture Guides',
-    template: '%s | Kkgool'
+    default: 'TarotDeck Online — Digital Tarot Resources & Readings',
+    template: '%s | TarotDeck Online'
   },
   description:
-    'Clear, honest guides on jerseys, sizing, care, training basics and fan travel. No counterfeit links. AdSense friendly.',
+    'Premium digital tarot resources, card meanings, and spiritual guidance tools for modern seekers.',
   keywords: [
-    'sports jerseys','sizing guide','kit care','fan travel','tactics explained',
-    'training basics','injury prevention'
+    'tarot cards','digital readings','card meanings','spiritual guidance','oracle cards',
+    'tarot spreads','divination tools'
   ],
   manifest: '/site.webmanifest',
   robots: {
@@ -39,24 +39,24 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    siteName: 'Kkgool',
-    url: 'https://kkgool.cc',
-    title: 'Kkgool — Sports Apparel & Fan Culture Guides',
+    siteName: 'TarotDeck Online',
+    url: 'https://tarotdeck.online',
+    title: 'TarotDeck Online — Digital Tarot Resources & Readings',
     description:
-      'Choose better gear, care for it longer, and enjoy the game more.',
-    images: [{ url: '/og/cover.png', width: 1200, height: 630, alt: 'Kkgool' }]
+      'Discover your path with premium digital tarot resources and spiritual guidance tools.',
+    images: [{ url: '/og/cover.png', width: 1200, height: 630, alt: 'TarotDeck Online' }]
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@kkgool_cc',
-    creator: '@kkgool_cc',
-    title: 'Kkgool — Sports Apparel & Fan Culture Guides',
+    site: '@tarotdeck_online',
+    creator: '@tarotdeck_online',
+    title: 'TarotDeck Online — Digital Tarot Resources & Readings',
     description:
-      'How-to guides for jerseys & gear. No hype, no counterfeits.',
+      'Premium digital tarot resources and spiritual guidance tools.',
     images: ['/og/cover.png']
   },
   alternates: { 
-    canonical: 'https://kkgool.cc',
+    canonical: 'https://tarotdeck.online',
     types: {
       'application/rss+xml': [{ url: 'rss', title: 'RSS Feed' }],
     },

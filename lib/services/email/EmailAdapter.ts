@@ -226,7 +226,7 @@ export class EmailService {
       
       const result = await this.adapter.sendEmail({
         to: { email: params.to, name: params.customerName },
-        from: { email: 'noreply@kkgool.cc', name: 'Kkgool' },
+        from: { email: 'noreply@tarotdeck.online', name: 'TarotDeck Online' },
         subject: template.subject,
         html: template.html,
         text: template.text,
@@ -253,7 +253,7 @@ export class EmailService {
       
       const result = await this.adapter.sendEmail({
         to: { email: params.to, name: params.customerName },
-        from: { email: 'noreply@kkgool.cc', name: 'Kkgool' },
+        from: { email: 'noreply@tarotdeck.online', name: 'TarotDeck Online' },
         subject: template.subject,
         html: template.html,
         text: template.text,

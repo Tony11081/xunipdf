@@ -1,10 +1,10 @@
 export const seo = {
-  title: 'Kkgool | Smart Guides for Sports Apparel & Fan Culture',
+  title: 'TarotDeck Online | Digital Tarot Resources & Spiritual Guidance',
   description:
-    'Kkgool helps fans choose, care and enjoy sports gear—no hype, just clear guides. Authorized buying tips, sizing, care, training & travel.',
+    'TarotDeck Online provides premium digital tarot resources, card meanings, and spiritual guidance tools for modern seekers and practitioners.',
   url: new URL(
     process.env.NODE_ENV === 'production'
-      ? 'https://kkgool.cc'
+      ? 'https://tarotdeck.online'
       : 'http://localhost:3000'
   ),
 } as const
