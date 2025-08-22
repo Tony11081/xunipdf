@@ -16,14 +16,14 @@ import { CookieConsent } from '~/components/CookieConsent'
 export const metadata: Metadata = {
   metadataBase: new URL('https://tarotdeck.online'),
   title: {
-    default: 'TarotDeck Online — Digital Tarot Resources & Readings',
-    template: '%s | TarotDeck Online'
+    default: 'Premium Digital Resources & Templates Marketplace',
+    template: '%s | Digital Resources Hub'
   },
   description:
-    'Premium digital tarot resources, card meanings, and spiritual guidance tools for modern seekers.',
+    'Premium digital templates, graphics, and creative assets for professionals and businesses. Instant download with commercial license.',
   keywords: [
-    'tarot cards','digital readings','card meanings','spiritual guidance','oracle cards',
-    'tarot spreads','divination tools'
+    'digital templates','design resources','creative assets','business templates','graphics download',
+    'presentation templates','design tools'
   ],
   manifest: '/site.webmanifest',
   robots: {
@@ -39,20 +39,20 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    siteName: 'TarotDeck Online',
+    siteName: 'Digital Resources Hub',
     url: 'https://tarotdeck.online',
-    title: 'TarotDeck Online — Digital Tarot Resources & Readings',
+    title: 'Premium Digital Resources & Templates Marketplace',
     description:
-      'Discover your path with premium digital tarot resources and spiritual guidance tools.',
-    images: [{ url: '/og/cover.png', width: 1200, height: 630, alt: 'TarotDeck Online' }]
+      'Discover premium digital templates, graphics, and creative assets for your professional projects.',
+    images: [{ url: '/og/cover.png', width: 1200, height: 630, alt: 'Digital Resources Hub' }]
   },
   twitter: {
     card: 'summary_large_image',
     site: '@tarotdeck_online',
     creator: '@tarotdeck_online',
-    title: 'TarotDeck Online — Digital Tarot Resources & Readings',
+    title: 'Premium Digital Resources & Templates Marketplace',
     description:
-      'Premium digital tarot resources and spiritual guidance tools.',
+      'Premium digital templates, graphics, and creative assets for professionals.',
     images: ['/og/cover.png']
   },
   alternates: { 
