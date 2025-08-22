@@ -144,7 +144,6 @@ export function ShareSection({ shopUrl, shopName, description }: ShareSectionPro
           </div>
           <Button
             onClick={handleCopyLink}
-            size="sm"
             className={`min-w-[80px] transition-all duration-200 ${
               copied 
                 ? 'bg-green-500 hover:bg-green-600 text-white' 
