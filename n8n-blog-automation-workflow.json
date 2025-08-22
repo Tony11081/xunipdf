@@ -1,0 +1,351 @@
+{
+  "name": "博客自动更新工作流",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "f8b5ed25-4f3e-4f4a-b9c3-8a9b7c2d1e0f",
+      "name": "开始",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [
+        240,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 6
+            }
+          ]
+        }
+      },
+      "id": "a1b2c3d4-e5f6-7890-ab12-cd34ef567890",
+      "name": "定时触发器",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [
+        460,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://feeds.feedburner.com/tech-news",
+        "options": {
+          "allowUnauthorizedCerts": true
+        }
+      },
+      "id": "b2c3d4e5-f6g7-8901-bc23-de45fg678901",
+      "name": "RSS源监控",
+      "type": "n8n-nodes-base.rssFeedRead",
+      "typeVersion": 1,
+      "position": [
+        680,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "dateTime": [
+            {
+              "value1": "={{ $json.pubDate }}",
+              "operation": "after",
+              "value2": "={{ $now.minus({ hours: 6 }).toISO() }}"
+            }
+          ]
+        }
+      },
+      "id": "c3d4e5f6-g7h8-9012-cd34-ef56gh789012",
+      "name": "筛选新内容",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        900,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// 处理和格式化内容\nconst items = $input.all();\nconst processedItems = [];\n\nfor (const item of items) {\n  const data = item.json;\n  \n  // 清理标题\n  const title = data.title.replace(/[\\[\\]]/g, '').trim();\n  \n  // 生成slug\n  const slug = title\n    .toLowerCase()\n    .replace(/[^a-z0-9\\s-]/g, '')\n    .replace(/\\s+/g, '-')\n    .slice(0, 96);\n  \n  // 提取描述\n  const description = data.contentSnippet \n    ? data.contentSnippet.slice(0, 200) + '...'\n    : data.title;\n  \n  // 提取关键词\n  const keywords = [];\n  if (data.categories && data.categories.length > 0) {\n    keywords.push(...data.categories);\n  }\n  \n  // 处理内容\n  let content = data.content || data.contentSnippet || '';\n  \n  // 转换为Markdown格式\n  content = content\n    .replace(/<p>/g, '\\n\\n')\n    .replace(/<\\/p>/g, '')\n    .replace(/<br\\s*\\/?>/g, '\\n')\n    .replace(/<strong>/g, '**')\n    .replace(/<\\/strong>/g, '**')\n    .replace(/<em>/g, '*')\n    .replace(/<\\/em>/g, '*')\n    .replace(/<[^>]*>/g, '');\n  \n  processedItems.push({\n    json: {\n      title: title,\n      slug: slug,\n      description: description,\n      excerpt: description,\n      keywords: keywords,\n      content: content,\n      publishedAt: data.pubDate || new Date().toISOString(),\n      originalUrl: data.link,\n      mood: 'neutral',\n      contentType: 'markdown'\n    }\n  });\n}\n\nreturn processedItems;"
+      },
+      "id": "d4e5f6g7-h8i9-0123-de45-fg67hi890123",
+      "name": "内容处理",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1120,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://api.unsplash.com/search/photos",
+        "authentication": "genericCredential",
+        "genericAuthType": "httpHeaderAuth",
+        "qs": {
+          "query": "={{ $json.title }}",
+          "per_page": 1,
+          "orientation": "landscape"
+        }
+      },
+      "id": "e5f6g7h8-i9j0-1234-ef56-gh78ij901234",
+      "name": "获取配图",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1340,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// 处理图片数据\nconst items = $input.all();\nconst processedItems = [];\n\nfor (let i = 0; i < items.length; i++) {\n  const item = items[i];\n  const imageData = item.json;\n  \n  let imageUrl = null;\n  let imageCredit = null;\n  \n  if (imageData.results && imageData.results.length > 0) {\n    const image = imageData.results[0];\n    imageUrl = image.urls.regular;\n    imageCredit = `Photo by ${image.user.name} on Unsplash`;\n  } else {\n    // 使用默认图片\n    imageUrl = 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1200&h=675&fit=crop';\n    imageCredit = 'Default image';\n  }\n  \n  // 合并原始内容数据和图片数据\n  const originalData = $('内容处理').all()[i].json;\n  \n  processedItems.push({\n    json: {\n      ...originalData,\n      mainImageUrl: imageUrl,\n      imageCredit: imageCredit\n    }\n  });\n}\n\nreturn processedItems;"
+      },
+      "id": "f6g7h8i9-j0k1-2345-fg67-hi89jk012345",
+      "name": "处理图片",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1560,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $vars.SANITY_PROJECT_URL }}/v2021-06-07/data/mutate/{{ $vars.SANITY_DATASET }}",
+        "authentication": "genericCredential",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer {{ $vars.SANITY_TOKEN }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "mutations",
+              "value": "=[{\n  \"create\": {\n    \"_type\": \"post\",\n    \"title\": \"{{ $json.title }}\",\n    \"slug\": {\n      \"_type\": \"slug\",\n      \"current\": \"{{ $json.slug }}\"\n    },\n    \"description\": \"{{ $json.description }}\",\n    \"excerpt\": \"{{ $json.excerpt }}\",\n    \"keywords\": {{ $json.keywords }},\n    \"publishedAt\": \"{{ $json.publishedAt }}\",\n    \"contentType\": \"{{ $json.contentType }}\",\n    \"markdown\": \"{{ $json.content }}\",\n    \"mood\": \"{{ $json.mood }}\",\n    \"readingTime\": {{ Math.ceil(($json.content.split(' ').length || 1) / 200) }},\n    \"mainImage\": {\n      \"_type\": \"image\",\n      \"asset\": {\n        \"_type\": \"reference\",\n        \"_ref\": \"image-placeholder\"\n      }\n    }\n  }\n}]"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "g7h8i9j0-k1l2-3456-gh78-ij90kl123456",
+      "name": "创建博客文章",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1780,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "c1a1f2d1-8e4d-4c6b-9a2e-5f8d9c1b3e7a",
+              "leftValue": "={{ $json.error }}",
+              "rightValue": "",
+              "operator": {
+                "type": "object",
+                "operation": "exists",
+                "rightType": "any"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "h8i9j0k1-l2m3-4567-hi89-jk01lm234567",
+      "name": "检查错误",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        2000,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "fromEmail": "noreply@yourwebsite.com",
+        "toEmail": "admin@yourwebsite.com",
+        "subject": "博客自动更新成功",
+        "message": "=成功创建了{{ $json.title }}篇新博客文章:\\n\\n标题: {{ $('处理图片').all()[0].json.title }}\\n链接: {{ $('处理图片').all()[0].json.originalUrl }}\\n发布时间: {{ $('处理图片').all()[0].json.publishedAt }}",
+        "options": {}
+      },
+      "id": "i9j0k1l2-m3n4-5678-ij90-kl12mn345678",
+      "name": "成功通知",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [
+        2220,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "fromEmail": "noreply@yourwebsite.com",
+        "toEmail": "admin@yourwebsite.com",
+        "subject": "博客自动更新失败",
+        "message": "=博客自动更新过程中发生错误:\\n\\n错误信息: {{ $json.error }}\\n时间: {{ $now }}\\n\\n请检查工作流配置。",
+        "options": {}
+      },
+      "id": "j0k1l2m3-n4o5-6789-jk01-lm23no456789",
+      "name": "错误通知",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "position": [
+        2220,
+        400
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "开始": {
+      "main": [
+        [
+          {
+            "node": "定时触发器",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "定时触发器": {
+      "main": [
+        [
+          {
+            "node": "RSS源监控",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RSS源监控": {
+      "main": [
+        [
+          {
+            "node": "筛选新内容",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "筛选新内容": {
+      "main": [
+        [
+          {
+            "node": "内容处理",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "内容处理": {
+      "main": [
+        [
+          {
+            "node": "获取配图",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "获取配图": {
+      "main": [
+        [
+          {
+            "node": "处理图片",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "处理图片": {
+      "main": [
+        [
+          {
+            "node": "创建博客文章",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "创建博客文章": {
+      "main": [
+        [
+          {
+            "node": "检查错误",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "检查错误": {
+      "main": [
+        [
+          {
+            "node": "成功通知",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "错误通知",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "1.0.0",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "your-instance-id"
+  },
+  "id": "blog-automation-workflow",
+  "tags": [
+    {
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "updatedAt": "2024-01-01T00:00:00.000Z",
+      "id": "blog-automation",
+      "name": "博客自动化"
+    }
+  ]
+}

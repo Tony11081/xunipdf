@@ -1,12 +1,13 @@
-# Allow all crawlers
+# Global robots.txt - This file is superseded by app/robots.ts in Next.js 13+
+# For the actual robots configuration, see app/robots.ts
+
 User-agent: *
 Allow: /
-Disallow: /lander
+Disallow: /api/
+Disallow: /admin/
+Disallow: /studio/
+Disallow: /_next/
+Disallow: /blocked/
 
-# Specific rules for Googlebot
-User-agent: Googlebot
-Allow: /
-Disallow: /lander
-
-# Sitemap location
-Sitemap: https://kkgool.cc/sitemap.xml 
+# Sitemap location (dynamically generated)
+Sitemap: https://tarotdeck.online/sitemap.xml 

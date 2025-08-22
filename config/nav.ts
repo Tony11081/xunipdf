@@ -1,8 +1,8 @@
 export const navigationItems = [
   { href: '/', text: 'Home' },
   { href: '/store', text: 'Store' },
-  { href: '/shop', text: 'Shop', description: 'Social-friendly shop page' },
   { href: '/blog', text: 'Blog' },
+  { href: '/projects', text: 'Projects' },
   { href: '/about', text: 'About' },
   { href: '/contact', text: 'Contact' }
 ]
