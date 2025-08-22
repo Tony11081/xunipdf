@@ -5,11 +5,11 @@ import { type Metadata } from 'next'
 import { Container } from '~/components/ui/Container'
 
 export const metadata: Metadata = {
-  title: 'Contact Us | Kkgool',
-  description: 'Questions about sports gear or training? Need guidance on sizing or gear care? Get in touch with our team.',
+  title: 'Contact Us | TarotDeck Online',
+  description: 'Questions about tarot readings or spiritual guidance? Need help with card meanings or deck care? Get in touch with our team.',
   openGraph: {
-    title: 'Contact Us | Kkgool',
-    description: 'Questions about sports gear or training? Need guidance on sizing or gear care? Get in touch with our team.',
+    title: 'Contact Us | TarotDeck Online',
+    description: 'Questions about tarot readings or spiritual guidance? Need help with card meanings or deck care? Get in touch with our team.',
     type: 'website',
   },
 }
@@ -28,7 +28,7 @@ export default function Page() {
 
       <div className="mt-10 max-w-2xl text-lg text-zinc-600 dark:text-zinc-400">
         <p>
-          Whether you have questions about gear authenticity, need sizing advice, or want to suggest a guide topic — our team is here to help.
+          Whether you have questions about tarot authenticity, need guidance on card meanings, or want to suggest a spiritual topic — our team is here to help.
         </p>
       </div>
 
@@ -52,7 +52,7 @@ export default function Page() {
             WhatsApp Support
           </h2>
           <p className="mt-4 text-zinc-600 dark:text-zinc-400">
-            For quick gear advice or urgent questions:
+            For quick spiritual guidance or urgent questions:
           </p>
           <div className="mt-4">
             <a 
@@ -62,7 +62,7 @@ export default function Page() {
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-lime-500 text-white font-medium rounded-lg hover:bg-lime-600 transition"
             >
               <span>💬</span>
-              <span>Chat with our Sports Expert</span>
+              <span>Chat with our Spiritual Guide</span>
             </a>
           </div>
           <p className="mt-4 text-sm text-zinc-500 dark:text-zinc-500">
@@ -72,19 +72,19 @@ export default function Page() {
 
         <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
           <h2 className="flex items-center text-xl font-semibold text-zinc-900 dark:text-zinc-100">
-            <span className="mr-3">⚽</span>
-            Gear Questions
+            <span className="mr-3">🔮</span>
+            Tarot Questions
           </h2>
           <p className="mt-4 text-zinc-600 dark:text-zinc-400">
-            Need help with sizing, authenticity checks, or gear recommendations? We're here to help.
+            Need help with card meanings, reading techniques, or deck recommendations? We're here to help.
           </p>
           <p className="mt-4 text-zinc-600 dark:text-zinc-400 font-medium">
             Please include the following in your message:
           </p>
           <ul className="mt-2 list-disc pl-5 text-zinc-600 dark:text-zinc-400">
-            <li className="mt-1">Sport and type of gear you're interested in</li>
-            <li className="mt-1">Your measurements or current gear sizes</li>
-            <li className="mt-1">Specific questions about fit, care, or authenticity</li>
+            <li className="mt-1">Type of tarot deck or reading you're interested in</li>
+            <li className="mt-1">Your current experience level with tarot</li>
+            <li className="mt-1">Specific questions about meanings, care, or authenticity</li>
           </ul>
         </div>
 
@@ -108,9 +108,9 @@ export default function Page() {
           About Us
         </h2>
         <p className="mt-4 text-zinc-600 dark:text-zinc-400">
-          Kkgool<br />
-          Online Sports Community<br />
-          <span className="text-sm">(Digital-first company)</span>
+          TarotDeck Online<br />
+          Digital Spiritual Community<br />
+          <span className="text-sm">(Digital-first spiritual platform)</span>
         </p>
       </div>
     </Container>

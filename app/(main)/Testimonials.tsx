@@ -68,140 +68,140 @@ const Testimonial = ({ quote, author, city, country, flag, index }: TestimonialP
 export function Testimonials() {
   const testimonials = [
     {
-      quote: "Finally found the perfect soccer cleats size guide. No more guessing between US and European sizing.",
+      quote: "The tarot card meanings guide finally helped me understand the deeper symbolism. My readings are so much more accurate now.",
       author: "Emily J.",
       city: "San Diego",
       country: "USA",
       flag: "🇺🇸"
     },
     {
-      quote: "Their jersey authenticity guide saved me from buying a fake Barcelona shirt. Worth every penny.",
+      quote: "Their authentic tarot deck guide saved me from buying a cheap imitation. The quality difference is remarkable.",
       author: "Daniel K.",
       city: "London",
       country: "UK",
       flag: "🇬🇧"
     },
     {
-      quote: "The gear care tips extended my running shoes' life by months. My marathon training gear lasts longer now.",
+      quote: "The card care tips have preserved my vintage tarot deck perfectly. It still looks brand new after years of use.",
       author: "Leon M.",
       city: "Berlin",
       country: "Germany",
       flag: "🇩🇪"
     },
     {
-      quote: "As a basketball coach, their training guides helped me prevent player injuries. Game changer.",
+      quote: "As a spiritual counselor, their tarot reading guides helped me provide deeper insights to clients. Life-changing.",
       author: "Sophia R.",
       city: "Toronto",
       country: "Canada",
       flag: "🇨🇦"
     },
     {
-      quote: "Found authentic fan gear for my team that's not available in Sweden. Quality was perfect.",
+      quote: "Found rare oracle cards that aren't available in Sweden. The spiritual energy in these cards is incredible.",
       author: "Anna L.",
       city: "Stockholm",
       country: "Sweden",
       flag: "🇸🇪"
     },
     {
-      quote: "Their buying guide helped me avoid counterfeit sports equipment. Honest, no-nonsense advice.",
+      quote: "Their authenticity guide helped me avoid counterfeit tarot decks. Honest, spiritual guidance you can trust.",
       author: "Maximilian P.",
       city: "Vienna",
       country: "Austria",
       flag: "🇦🇹"
     },
     {
-      quote: "The sizing conversion chart for tennis rackets was spot on. Perfect grip size recommendation.",
+      quote: "The Celtic Cross spread tutorial was perfect for my skill level. Finally mastering complex readings.",
       author: "Takashi Y.",
       city: "Tokyo",
       country: "Japan",
       flag: "🇯🇵"
     },
     {
-      quote: "Tactical analysis made simple — now I understand pressing and transitions like never before.",
+      quote: "Tarot symbolism made simple — now I understand archetypes and spiritual meanings like never before.",
       author: "Claire D.",
       city: "Paris",
       country: "France",
       flag: "🇫🇷"
     },
     {
-      quote: "Fan travel guide saved me hundreds on Champions League away days. Great accommodation tips.",
+      quote: "Their spiritual journey guide opened new dimensions in my practice. Found my true calling as a reader.",
       author: "Marco V.",
       city: "Rome",
       country: "Italy",
       flag: "🇮🇹"
     },
     {
-      quote: "Their football boot breakdown helped me choose based on playing surface. No more blisters!",
+      quote: "The intuitive reading techniques transformed my connection with the cards. No more second-guessing!",
       author: "Isabella C.",
       city: "Barcelona",
       country: "Spain",
       flag: "🇪🇸"
     },
     {
-      quote: "Training schedule for beginners was perfect. Started running 5Ks without injuries.",
+      quote: "Beginner's tarot course was perfect for starting my spiritual journey. Now doing daily readings confidently.",
       author: "Thomas W.",
       city: "Sydney",
       country: "Australia",
       flag: "🇦🇺"
     },
     {
-      quote: "Jersey washing guide kept all my team colors vibrant. Numbers haven't peeled once.",
+      quote: "Card cleansing rituals have kept my deck's energy pure and vibrant. The spiritual connection is stronger.",
       author: "Laura B.",
       city: "Amsterdam",
       country: "Netherlands",
       flag: "🇳🇱"
     },
     {
-      quote: "Recovery routine recommendations cut my muscle soreness in half. Training consistency improved.",
+      quote: "Meditation techniques before readings cut my confusion in half. Spiritual clarity improved dramatically.",
       author: "Michael O.",
       city: "Dublin",
       country: "Ireland",
       flag: "🇮🇪"
     },
     {
-      quote: "Gym equipment guides helped me set up a home workout space within budget. No scams.",
+      quote: "Sacred space setup guides helped me create a powerful reading environment at home. Pure magic.",
       author: "Pavel K.",
       city: "Prague",
       country: "Czech Republic",
       flag: "🇨🇿"
     },
     {
-      quote: "Match day etiquette tips made my first away game experience amazing. Felt like a local fan.",
+      quote: "Reading etiquette tips made my first professional session amazing. Clients felt truly heard and guided.",
       author: "Nina S.",
       city: "Oslo",
       country: "Norway",
       flag: "🇳🇴"
     },
     {
-      quote: "Swimming gear recommendations were perfect for my triathlon training. Quality lasted all season.",
+      quote: "Oracle card recommendations were perfect for my healing practice. Quality lasted through countless sessions.",
       author: "Maria F.",
       city: "Mexico City",
       country: "Mexico",
       flag: "🇲🇽"
     },
     {
-      quote: "Injury prevention tips for runners saved my knees. Three marathons with zero issues.",
+      quote: "Psychic protection techniques saved my energy during difficult readings. Three years of clear practice.",
       author: "David L.",
       city: "Seoul",
       country: "South Korea",
       flag: "🇰🇷"
     },
     {
-      quote: "Youth coaching drills from their training section made practice more engaging for kids.",
+      quote: "Teaching tarot to beginners became easier with their guides. My workshops are now engaging and enlightening.",
       author: "Emma H.",
       city: "Wellington",
       country: "New Zealand",
       flag: "🇳🇿"
     },
     {
-      quote: "Authentic vs replica jersey guide helped me make informed purchases. No regrets anymore.",
+      quote: "Authentic vs printed deck guide helped me make informed spiritual purchases. No regrets anymore.",
       author: "Raj P.",
       city: "Singapore",
       country: "Singapore",
       flag: "🇸🇬"
     },
     {
-      quote: "Cycling gear maintenance schedule keeps my bike running smooth. Extended component life significantly.",
+      quote: "Crystal pairing recommendations keep my tarot practice energized. Extended my spiritual connection significantly.",
       author: "Andre M.",
       city: "Rio de Janeiro",
       country: "Brazil",
@@ -217,7 +217,7 @@ export function Testimonials() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          Trusted by sports fans worldwide
+          Trusted by spiritual seekers worldwide
         </motion.h2>
         <motion.p 
           className="mt-2 text-zinc-600 dark:text-zinc-400 text-sm"
@@ -225,7 +225,7 @@ export function Testimonials() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
         >
-          Here&apos;s what athletes and fans say about Kkgool:
+          Here&apos;s what tarot practitioners and spiritual seekers say about TarotDeck Online:
         </motion.p>
       </div>
 

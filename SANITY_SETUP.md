@@ -12,7 +12,7 @@
 
 2. **选择您的项目**
    - 在仪表板中选择现有项目
-   - 或创建新项目（项目名称建议：`digital-store`）
+   - 或创建新项目（项目名称建议：`tarotdeck-online`）
 
 3. **获取项目 ID**
    - 在项目页面，点击 **Settings** → **API**
@@ -25,7 +25,7 @@
 5. **创建 API Token**
    - 在 **Settings** → **API** → **Tokens**
    - 点击 **Add API token**
-   - 名称：`digital-store-token`
+   - 名称：`tarotdeck-online-token`
    - 权限：**Editor**（编辑权限）
    - 复制生成的 token（格式类似：`skXXXXXX...`）
 

@@ -19,12 +19,12 @@ interface BreadcrumbProps {
 // Route-to-label mapping for automatic breadcrumb generation
 const routeLabels: Record<string, string> = {
   '/': 'Home',
-  '/gear': 'Gear Guide',
-  '/buying': 'Buying Guides', 
-  '/training': 'Training & Health',
-  '/tactics': 'Tactics Made Simple',
-  '/travel': 'Fan Travel',
-  '/guides': 'All Guides',
+  '/readings': 'Tarot Readings',
+  '/meanings': 'Card Meanings', 
+  '/spreads': 'Tarot Spreads',
+  '/guides': 'Spiritual Guides',
+  '/resources': 'Digital Resources',
+  '/store': 'Tarot Store',
   '/about': 'About',
   '/contact': 'Contact',
   '/blog': 'Blog',

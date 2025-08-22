@@ -55,8 +55,8 @@ const StatItem = ({ value, label, suffix = '+', delay = 0 }: StatItemProps) => {
 export function StatsCounter() {
   return (
     <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 text-center gap-8 px-4">
-      <StatItem value={120} label="Actionable Guides" suffix="+" delay={0} />
-      <StatItem value={80} label="Gear Checklists" suffix="+" delay={200} />
+      <StatItem value={78} label="Tarot Cards Explained" suffix="" delay={0} />
+      <StatItem value={50} label="Spiritual Spreads" suffix="+" delay={200} />
       <StatItem value={60} label="Countries Reading" suffix="+" delay={400} />
     </div>
   )

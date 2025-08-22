@@ -1,11 +1,11 @@
-# Digital Store - International E-commerce Platform
+# TarotDeck Online - Digital Tarot Resources Platform
 
-A modern, international digital goods marketplace built with Next.js 14, featuring multi-language support, global payments, and secure digital downloads.
+A modern, spiritual digital resources platform built with Next.js 14, featuring multi-language support, secure access, and premium tarot resources.
 
 ## 🌟 Features
 
 ### 🛍️ **E-commerce Core**
-- **Digital Products**: Sell PDFs, templates, courses, and digital resources
+- **Tarot Resources**: Premium tarot cards, readings, guides, and spiritual tools
 - **Multi-Currency**: Support for USD, EUR, JPY, GBP, CNY with real-time conversion
 - **Global Payments**: Stripe, PayPal, and mock payment integration
 - **Secure Downloads**: JWT-signed download tokens with expiration and usage limits
@@ -53,7 +53,7 @@ A modern, international digital goods marketplace built with Next.js 14, featuri
 ### **1. Installation**
 ```bash
 git clone <repository-url>
-cd digital-store
+cd tarotdeck-online
 pnpm install
 ```
 
@@ -99,7 +99,7 @@ pnpm start
 ## 📁 **Project Structure**
 
 ```
-📦 digital-store/
+📦 tarotdeck-online/
 ├── 📂 app/
 │   ├── 📂 [locale]/           # Internationalized routes
 │   │   ├── 📂 store/          # Product catalog
@@ -233,10 +233,10 @@ S3_SECRET_ACCESS_KEY="..."
 ### **Docker**
 ```bash
 # Build image
-docker build -t digital-store .
+docker build -t tarotdeck-online .
 
 # Run container
-docker run -p 3000:3000 --env-file .env digital-store
+docker run -p 3000:3000 --env-file .env tarotdeck-online
 ```
 
 ## 📈 **Analytics & Monitoring**

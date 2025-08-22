@@ -11,7 +11,7 @@ export function CtaBanner() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        Ready to gear up like a pro?
+        Ready to unlock spiritual wisdom?
       </motion.h2>
       
       <motion.p 
@@ -20,7 +20,7 @@ export function CtaBanner() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
       >
-        Get honest guides for better gear choices, proper care, and confident play.
+        Get authentic guidance for tarot mastery, spiritual growth, and intuitive reading.
       </motion.p>
 
       <motion.div 
@@ -30,10 +30,10 @@ export function CtaBanner() {
         transition={{ delay: 0.2 }}
       >
         <Link 
-          href="/gear" 
+          href="/readings" 
           className="inline-block bg-zinc-900 text-white px-6 py-3 rounded-md font-medium hover:opacity-90 dark:bg-zinc-100 dark:text-zinc-900"
         >
-          ⚽ Explore Gear Guides
+          🔮 Explore Tarot Readings
         </Link>
       </motion.div>
     </section>

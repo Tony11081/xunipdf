@@ -18,8 +18,8 @@ export function Headline() {
           duration: 0.3,
         }}
       >
-        Kkgool helps you pick and care for sports gear,<br className="sm:hidden" />
-        without the jargon or the hype.
+        TarotDeck Online helps you discover spiritual wisdom,<br className="sm:hidden" />
+        without the confusion or the mystique.
       </motion.h1>
       
       <motion.p 
@@ -34,7 +34,7 @@ export function Headline() {
           delay: 0.05,
         }}
       >
-        English-first guides on jerseys, sizing, washing, training & fan travel — AdSense-safe and brand-friendly.
+        Premium tarot resources, card meanings, spiritual guidance & oracle wisdom — accessible and authentic.
       </motion.p>
       
       <motion.p
@@ -50,7 +50,7 @@ export function Headline() {
         }}
       >
         <Balancer>
-          Clear, honest guides for choosing authentic gear, proper care, training basics, and enjoying match days without the marketing fluff.
+          Clear, authentic guidance for tarot readings, card meanings, spiritual practices, and divine wisdom without the pretense.
         </Balancer>
       </motion.p>
       <motion.div
@@ -66,22 +66,22 @@ export function Headline() {
         }}
       >
         <Link
-          href="/gear"
+          href="/readings"
           className="px-6 py-3 text-white bg-zinc-900 rounded-md text-lg font-medium hover:opacity-90 dark:bg-zinc-100 dark:text-zinc-900"
         >
-          ⚽ Gear Guide
+          🔮 Tarot Readings
         </Link>
         <Link
-          href="/buying"
+          href="/meanings"
           className="px-6 py-3 border border-zinc-300 text-zinc-800 rounded-md text-lg font-medium hover:border-zinc-400 dark:border-zinc-700 dark:text-zinc-100 dark:hover:border-zinc-500"
         >
-          🛡️ Buying Guides
+          ✨ Card Meanings
         </Link>
         <Link
-          href="/training"
+          href="/guides"
           className="px-6 py-3 border border-lime-500 text-lime-700 rounded-md text-lg font-medium hover:bg-lime-50 dark:border-lime-600 dark:text-lime-400 dark:hover:border-lime-500"
         >
-          🏃‍♂️ Training & Health
+          🌙 Spiritual Guides
         </Link>
       </motion.div>
     </div>
