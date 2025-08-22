@@ -231,7 +231,6 @@ export function FileUploadManager({
             <Button
               onClick={uploadAllFiles}
               disabled={files.every(f => f.uploaded || f.error)}
-              size="sm"
             >
               🚀 全部上传
             </Button>
