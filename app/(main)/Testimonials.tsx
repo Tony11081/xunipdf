@@ -68,140 +68,140 @@ const Testimonial = ({ quote, author, city, country, flag, index }: TestimonialP
 export function Testimonials() {
   const testimonials = [
     {
-      quote: "The tarot card meanings guide finally helped me understand the deeper symbolism. My readings are so much more accurate now.",
+      quote: "The design templates finally helped me create professional presentations. My client meetings are so much more impactful now.",
       author: "Emily J.",
       city: "San Diego",
       country: "USA",
       flag: "🇺🇸"
     },
     {
-      quote: "Their authentic tarot deck guide saved me from buying a cheap imitation. The quality difference is remarkable.",
+      quote: "Their premium template collection saved me from using low-quality freebies. The quality difference is remarkable.",
       author: "Daniel K.",
       city: "London",
       country: "UK",
       flag: "🇬🇧"
     },
     {
-      quote: "The card care tips have preserved my vintage tarot deck perfectly. It still looks brand new after years of use.",
+      quote: "The file organization tips have kept my digital assets perfectly organized. Still easy to find after years of projects.",
       author: "Leon M.",
       city: "Berlin",
       country: "Germany",
       flag: "🇩🇪"
     },
     {
-      quote: "As a spiritual counselor, their tarot reading guides helped me provide deeper insights to clients. Life-changing.",
+      quote: "As a freelance designer, their resource library helped me deliver better projects to clients. Game-changer.",
       author: "Sophia R.",
       city: "Toronto",
       country: "Canada",
       flag: "🇨🇦"
     },
     {
-      quote: "Found rare oracle cards that aren't available in Sweden. The spiritual energy in these cards is incredible.",
+      quote: "Found premium graphics that aren't available elsewhere in Sweden. The creative assets are incredible.",
       author: "Anna L.",
       city: "Stockholm",
       country: "Sweden",
       flag: "🇸🇪"
     },
     {
-      quote: "Their authenticity guide helped me avoid counterfeit tarot decks. Honest, spiritual guidance you can trust.",
+      quote: "Their licensing guide helped me avoid copyright issues. Clear, professional guidance you can trust.",
       author: "Maximilian P.",
       city: "Vienna",
       country: "Austria",
       flag: "🇦🇹"
     },
     {
-      quote: "The Celtic Cross spread tutorial was perfect for my skill level. Finally mastering complex readings.",
+      quote: "The branding template pack was perfect for my startup. Finally have professional marketing materials.",
       author: "Takashi Y.",
       city: "Tokyo",
       country: "Japan",
       flag: "🇯🇵"
     },
     {
-      quote: "Tarot symbolism made simple — now I understand archetypes and spiritual meanings like never before.",
+      quote: "Digital asset management made simple — now I organize projects and resources like never before.",
       author: "Claire D.",
       city: "Paris",
       country: "France",
       flag: "🇫🇷"
     },
     {
-      quote: "Their spiritual journey guide opened new dimensions in my practice. Found my true calling as a reader.",
+      quote: "Their business template collection opened new opportunities for my agency. Found my creative edge.",
       author: "Marco V.",
       city: "Rome",
       country: "Italy",
       flag: "🇮🇹"
     },
     {
-      quote: "The intuitive reading techniques transformed my connection with the cards. No more second-guessing!",
+      quote: "The design workflow tutorials transformed my creative process. No more second-guessing!",
       author: "Isabella C.",
       city: "Barcelona",
       country: "Spain",
       flag: "🇪🇸"
     },
     {
-      quote: "Beginner's tarot course was perfect for starting my spiritual journey. Now doing daily readings confidently.",
+      quote: "Beginner's design course was perfect for starting my creative journey. Now creating content confidently.",
       author: "Thomas W.",
       city: "Sydney",
       country: "Australia",
       flag: "🇦🇺"
     },
     {
-      quote: "Card cleansing rituals have kept my deck's energy pure and vibrant. The spiritual connection is stronger.",
+      quote: "File management systems have kept my projects organized and efficient. The workflow is so much smoother.",
       author: "Laura B.",
       city: "Amsterdam",
       country: "Netherlands",
       flag: "🇳🇱"
     },
     {
-      quote: "Meditation techniques before readings cut my confusion in half. Spiritual clarity improved dramatically.",
+      quote: "Design best practices reduced my revision cycles dramatically. Client satisfaction improved significantly.",
       author: "Michael O.",
       city: "Dublin",
       country: "Ireland",
       flag: "🇮🇪"
     },
     {
-      quote: "Sacred space setup guides helped me create a powerful reading environment at home. Pure magic.",
+      quote: "Workspace setup guides helped me create an efficient home office. Pure productivity boost.",
       author: "Pavel K.",
       city: "Prague",
       country: "Czech Republic",
       flag: "🇨🇿"
     },
     {
-      quote: "Reading etiquette tips made my first professional session amazing. Clients felt truly heard and guided.",
+      quote: "Client presentation tips made my first pitch amazing. Clients were impressed and engaged throughout.",
       author: "Nina S.",
       city: "Oslo",
       country: "Norway",
       flag: "🇳🇴"
     },
     {
-      quote: "Oracle card recommendations were perfect for my healing practice. Quality lasted through countless sessions.",
+      quote: "Marketing template recommendations were perfect for my small business. Quality lasted through countless campaigns.",
       author: "Maria F.",
       city: "Mexico City",
       country: "Mexico",
       flag: "🇲🇽"
     },
     {
-      quote: "Psychic protection techniques saved my energy during difficult readings. Three years of clear practice.",
+      quote: "Brand protection guidelines saved me from costly mistakes. Three years of successful projects.",
       author: "David L.",
       city: "Seoul",
       country: "South Korea",
       flag: "🇰🇷"
     },
     {
-      quote: "Teaching tarot to beginners became easier with their guides. My workshops are now engaging and enlightening.",
+      quote: "Teaching design became easier with their educational resources. My students are now creating amazing work.",
       author: "Emma H.",
       city: "Wellington",
       country: "New Zealand",
       flag: "🇳🇿"
     },
     {
-      quote: "Authentic vs printed deck guide helped me make informed spiritual purchases. No regrets anymore.",
+      quote: "Premium vs free resource guide helped me make informed creative investments. No regrets anymore.",
       author: "Raj P.",
       city: "Singapore",
       country: "Singapore",
       flag: "🇸🇬"
     },
     {
-      quote: "Crystal pairing recommendations keep my tarot practice energized. Extended my spiritual connection significantly.",
+      quote: "Software integration tips keep my creative workflow seamless. Extended my productivity significantly.",
       author: "Andre M.",
       city: "Rio de Janeiro",
       country: "Brazil",
@@ -217,7 +217,7 @@ export function Testimonials() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          Trusted by spiritual seekers worldwide
+          Trusted by creators worldwide
         </motion.h2>
         <motion.p 
           className="mt-2 text-zinc-600 dark:text-zinc-400 text-sm"
@@ -225,7 +225,7 @@ export function Testimonials() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
         >
-          Here&apos;s what tarot practitioners and spiritual seekers say about TarotDeck Online:
+          Here&apos;s what designers, entrepreneurs and creators say about our platform:
         </motion.p>
       </div>
 

@@ -11,7 +11,7 @@ export function CtaBanner() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        Ready to unlock spiritual wisdom?
+        Ready to elevate your projects?
       </motion.h2>
       
       <motion.p 
@@ -20,7 +20,7 @@ export function CtaBanner() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
       >
-        Get authentic guidance for tarot mastery, spiritual growth, and intuitive reading.
+        Get premium digital resources for professional results, creative freedom, and instant success.
       </motion.p>
 
       <motion.div 
@@ -30,10 +30,10 @@ export function CtaBanner() {
         transition={{ delay: 0.2 }}
       >
         <Link 
-          href="/readings" 
+          href="/store" 
           className="inline-block bg-zinc-900 text-white px-6 py-3 rounded-md font-medium hover:opacity-90 dark:bg-zinc-100 dark:text-zinc-900"
         >
-          🔮 Explore Tarot Readings
+          🛍️ Explore Store
         </Link>
       </motion.div>
     </section>

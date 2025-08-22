@@ -17,12 +17,12 @@ export default async function HomePage() {
         <Container>
           <div className="mx-auto max-w-4xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-6xl">
-              Digital Tarot
+              Premium Digital
               <span className="text-lime-600 dark:text-lime-400"> Resources</span>
             </h1>
             <p className="mt-6 text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-              Discover premium digital tarot resources, card meanings, and spiritual guidance tools. 
-              Instant access, lifetime wisdom.
+              Discover premium digital resources, templates, and tools for your projects. 
+              Instant access, lifetime value.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Button href="/store">
@@ -41,10 +41,10 @@ export default async function HomePage() {
         <Container>
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-4xl">
-              Why Choose TarotDeck Online?
+              Why Choose Our Platform?
             </h2>
             <p className="mt-4 text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-              Premium tarot resources designed to enhance your spiritual journey and practice.
+              Premium digital resources designed to enhance your projects and productivity.
             </p>
           </div>
           <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
@@ -56,7 +56,7 @@ export default async function HomePage() {
                 Instant Access
               </h3>
               <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-                Get immediate access to your tarot resources. No waiting, no delays.
+                Get immediate access to your digital resources. No waiting, no delays.
               </p>
             </div>
             <div className="text-center">
@@ -67,7 +67,7 @@ export default async function HomePage() {
                 Secure & Reliable
               </h3>
               <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-                Secure access with reliable resources that provide lasting spiritual guidance.
+                Secure access with reliable resources that provide lasting value.
               </p>
             </div>
             <div className="text-center">
@@ -75,10 +75,10 @@ export default async function HomePage() {
                 <span className="text-2xl">🔮</span>
               </div>
               <h3 className="mt-6 text-lg font-semibold text-zinc-900 dark:text-zinc-100">
-                Spiritual Guidance
+                Quality Content
               </h3>
               <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-                Comprehensive tarot wisdom accessible to seekers worldwide.
+                Comprehensive digital resources accessible to users worldwide.
               </p>
             </div>
           </div>
@@ -91,11 +91,11 @@ export default async function HomePage() {
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
             <div className="text-center">
               <div className="text-3xl font-bold text-lime-600 dark:text-lime-400">1000+</div>
-              <div className="text-sm text-zinc-600 dark:text-zinc-400">Tarot Resources</div>
+              <div className="text-sm text-zinc-600 dark:text-zinc-400">Digital Resources</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-lime-600 dark:text-lime-400">50k+</div>
-              <div className="text-sm text-zinc-600 dark:text-zinc-400">Spiritual Seekers</div>
+              <div className="text-sm text-zinc-600 dark:text-zinc-400">Happy Customers</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-lime-600 dark:text-lime-400">99.9%</div>
@@ -117,7 +117,7 @@ export default async function HomePage() {
               Featured Resources
             </h2>
             <p className="mt-4 text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-              Hand-picked tarot resources from our premium spiritual collection.
+              Hand-picked digital resources from our premium collection.
             </p>
           </div>
           <div className="mt-12 text-center">

@@ -48,24 +48,24 @@ const FeatureDetail = ({ icon, title, description, index }: FeatureDetailProps) 
 export function FeatureIntro() {
   const features = [
     {
-      icon: '🔮',
-      title: 'Authentic Tarot Resources',
-      description: 'Access genuine tarot knowledge and reliable spiritual guidance. No misleading information—ever.'
+      icon: '💼',
+      title: 'Premium Quality Resources',
+      description: 'Access high-quality digital templates and assets. Carefully curated and professionally designed.'
     },
     {
-      icon: '✨',
-      title: 'Clear Card Meanings',
-      description: 'Comprehensive interpretations for all 78 tarot cards with upright and reversed meanings.'
+      icon: '🚀',
+      title: 'Instant Download',
+      description: 'Get immediate access to your purchases with secure, unlimited downloads and lifetime access.'
     },
     {
-      icon: '🌙',
-      title: 'Spiritual Practice Care',
-      description: 'Learn proper card cleansing, deck care, and sacred space setup for lasting spiritual connection.'
+      icon: '🎨',
+      title: 'Multiple Formats',
+      description: 'Compatible files in various formats - PSD, AI, PNG, PDF, and more for maximum flexibility.'
     },
     {
-      icon: '🗓️',
-      title: 'Daily Reading Guidance',
-      description: 'Simple spreads, timing, and intuitive techniques for meaningful daily practice.'
+      icon: '📊',
+      title: 'Commercial License',
+      description: 'Use our resources for personal and commercial projects with clear licensing terms.'
     }
   ]
   
@@ -77,7 +77,7 @@ export function FeatureIntro() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          From mystique to mastery — in moments.
+          From idea to reality — in minutes.
         </motion.h2>
         <motion.p 
           className="mt-4 max-w-xl mx-auto text-zinc-600 dark:text-zinc-400"
@@ -85,7 +85,7 @@ export function FeatureIntro() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
         >
-          We cut through spiritual confusion and give you practical, authentic guidance on tarot practice — from choosing authentic decks to reading with confidence and developing intuition.
+          We provide high-quality digital resources and templates for your creative projects — from business presentations to design assets and everything in between.
         </motion.p>
       </div>
 
@@ -111,8 +111,8 @@ export function FeatureIntro() {
           <div className="relative w-full h-full min-h-[300px] bg-zinc-200 dark:bg-zinc-700 rounded-lg overflow-hidden">
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-zinc-500 dark:text-zinc-400 text-center">
-                <span className="block text-4xl mb-2">🔮</span>
-                <span className="block">Tarot reading interface preview</span>
+                <span className="block text-4xl mb-2">📁</span>
+                <span className="block">Resource preview interface</span>
               </div>
             </div>
           </div>

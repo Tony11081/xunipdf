@@ -18,8 +18,8 @@ export function Headline() {
           duration: 0.3,
         }}
       >
-        TarotDeck Online helps you discover spiritual wisdom,<br className="sm:hidden" />
-        without the confusion or the mystique.
+        Premium digital resources marketplace,<br className="sm:hidden" />
+        without the complexity or the hassle.
       </motion.h1>
       
       <motion.p 
@@ -34,7 +34,7 @@ export function Headline() {
           delay: 0.05,
         }}
       >
-        Premium tarot resources, card meanings, spiritual guidance & oracle wisdom — accessible and authentic.
+        Premium digital templates, resources, tools & creative assets — accessible and authentic.
       </motion.p>
       
       <motion.p
@@ -50,7 +50,7 @@ export function Headline() {
         }}
       >
         <Balancer>
-          Clear, authentic guidance for tarot readings, card meanings, spiritual practices, and divine wisdom without the pretense.
+          Clear, quality digital resources for your projects, designs, content creation, and business needs without the complexity.
         </Balancer>
       </motion.p>
       <motion.div
@@ -66,22 +66,22 @@ export function Headline() {
         }}
       >
         <Link
-          href="/readings"
+          href="/store"
           className="px-6 py-3 text-white bg-zinc-900 rounded-md text-lg font-medium hover:opacity-90 dark:bg-zinc-100 dark:text-zinc-900"
         >
-          🔮 Tarot Readings
+          🛍️ Browse Store
         </Link>
         <Link
-          href="/meanings"
+          href="/templates"
           className="px-6 py-3 border border-zinc-300 text-zinc-800 rounded-md text-lg font-medium hover:border-zinc-400 dark:border-zinc-700 dark:text-zinc-100 dark:hover:border-zinc-500"
         >
-          ✨ Card Meanings
+          📄 Templates
         </Link>
         <Link
-          href="/guides"
+          href="/resources"
           className="px-6 py-3 border border-lime-500 text-lime-700 rounded-md text-lg font-medium hover:bg-lime-50 dark:border-lime-600 dark:text-lime-400 dark:hover:border-lime-500"
         >
-          🌙 Spiritual Guides
+          💎 Digital Assets
         </Link>
       </motion.div>
     </div>

@@ -15,12 +15,12 @@ interface SEOProps {
 }
 
 const defaultSEO = {
-  title: 'TarotDeck Online - Premium Digital Tarot Resources',
-  description: 'Discover premium digital tarot resources, card meanings, and spiritual guidance tools for modern seekers and practitioners.',
-  keywords: ['tarot cards', 'digital readings', 'card meanings', 'spiritual guidance', 'oracle cards'],
+  title: 'Premium Digital Resources & Templates Marketplace',
+  description: 'Discover premium digital resources, templates, and creative assets for your projects. Instant download, commercial license included.',
+  keywords: ['digital templates', 'design resources', 'creative assets', 'business templates', 'graphics download'],
   image: '/og_zh.png',
   type: 'website' as const,
-  author: 'TarotDeck Online Team'
+  author: 'Digital Resources Team'
 }
 
 export function generateSEOMetadata({
@@ -139,48 +139,48 @@ export function generateSEOMetadata({
 // Pre-defined metadata for common pages
 export const seoPresets = {
   home: (): Metadata => generateSEOMetadata({
-    title: 'Premium Digital Tarot Resources & Readings',
-    description: 'Discover your spiritual path with premium digital tarot resources, card meanings, and guidance tools for modern practitioners.',
-    keywords: ['tarot resources', 'digital readings', 'card meanings', 'spiritual guidance'],
+    title: 'Premium Digital Resources & Templates',
+    description: 'Discover premium digital templates, graphics, and creative resources for your business and personal projects.',
+    keywords: ['digital templates', 'design resources', 'creative assets', 'business templates'],
     url: '/',
   }),
 
-  readings: (): Metadata => generateSEOMetadata({
-    title: 'Tarot Readings & Interpretations',
-    description: 'Comprehensive tarot reading guides and card interpretations. Learn to read tarot cards with expert guidance and spiritual wisdom.',
-    keywords: ['tarot readings', 'card interpretations', 'tarot guidance', 'spiritual readings'],
-    url: '/readings',
-    section: 'Readings',
+  templates: (): Metadata => generateSEOMetadata({
+    title: 'Premium Templates & Design Assets',
+    description: 'Professional templates for presentations, branding, and marketing. Download instantly with commercial license included.',
+    keywords: ['premium templates', 'design templates', 'business templates', 'presentation templates'],
+    url: '/templates',
+    section: 'Templates',
   }),
 
-  spreads: (): Metadata => generateSEOMetadata({
-    title: 'Tarot Spreads & Layouts',
-    description: 'Discover powerful tarot spreads for every situation. From simple three-card spreads to complex Celtic Cross layouts.',
-    keywords: ['tarot spreads', 'card layouts', 'tarot patterns', 'divination spreads'],
-    url: '/spreads',
-    section: 'Spreads',
+  graphics: (): Metadata => generateSEOMetadata({
+    title: 'Graphics & Creative Assets',
+    description: 'High-quality graphics, icons, and creative assets for your projects. Multiple formats available for maximum flexibility.',
+    keywords: ['graphics download', 'creative assets', 'design graphics', 'digital graphics'],
+    url: '/graphics',
+    section: 'Graphics',
   }),
 
-  meanings: (): Metadata => generateSEOMetadata({
-    title: 'Tarot Card Meanings & Symbolism',
-    description: 'Deep dive into tarot card meanings, symbolism, and spiritual significance. Master the language of the cards.',
-    keywords: ['tarot meanings', 'card symbolism', 'tarot interpretation', 'spiritual symbolism'],
-    url: '/meanings',
-    section: 'Meanings',
+  tools: (): Metadata => generateSEOMetadata({
+    title: 'Design Tools & Resources',
+    description: 'Essential design tools, software recommendations, and workflow optimization resources for creators and professionals.',
+    keywords: ['design tools', 'creative software', 'design workflow', 'productivity tools'],
+    url: '/tools',
+    section: 'Tools',
   }),
 
   guides: (): Metadata => generateSEOMetadata({
-    title: 'Tarot Learning Guides',
-    description: 'Comprehensive guides for learning tarot reading, from beginner basics to advanced techniques and spiritual practices.',
-    keywords: ['tarot guides', 'learning tarot', 'tarot tutorials', 'spiritual guidance'],
+    title: 'Design & Business Guides',
+    description: 'Comprehensive guides for design, business, and creative projects. From beginner basics to advanced techniques.',
+    keywords: ['design guides', 'business guides', 'creative tutorials', 'professional guidance'],
     url: '/guides',
     section: 'Guides',
   }),
 
   resources: (): Metadata => generateSEOMetadata({
-    title: 'Digital Tarot Resources',
-    description: 'Premium digital tarot resources, printable cards, and spiritual tools for modern practitioners and seekers.',
-    keywords: ['tarot resources', 'digital cards', 'spiritual tools', 'tarot downloads'],
+    title: 'Digital Resources & Assets',
+    description: 'Premium digital resources, downloadable assets, and creative tools for modern professionals and creators.',
+    keywords: ['digital resources', 'downloadable assets', 'creative tools', 'digital downloads'],
     url: '/resources',
     section: 'Resources',
   }),
