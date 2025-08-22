@@ -235,7 +235,7 @@ export default function StorePage() {
                         </span>
                       )}
                     </div>
-                    <Button size="sm">
+                    <Button>
                       View Details
                     </Button>
                   </div>
