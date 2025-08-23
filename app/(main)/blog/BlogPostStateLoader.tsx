@@ -11,11 +11,25 @@ export function BlogPostStateLoader({ post }: { post: Post }) {
   const { data: comments } = useQuery(
     ['comments', post._id],
     async () => {
-      const res = await fetch(`/api/comments/${post._id}`)
-      const data = await res.json()
-      return data as PostIDLessCommentDto[]
+      try {
+        const res = await fetch(`/api/comments/${post._id}`)
+        if (!res.ok) {
+          console.error(`Failed to fetch comments: ${res.status}`)
+          return []
+        }
+        const data = await res.json()
+        // 确保返回的是数组
+        return Array.isArray(data) ? data : []
+      } catch (error) {
+        console.error('Error fetching comments:', error)
+        return []
+      }
     },
-    { initialData: [] }
+    { 
+      initialData: [],
+      retry: false, // 避免重复请求失败
+      refetchOnWindowFocus: false
+    }
   )
 
   React.useEffect(() => {
@@ -23,10 +37,12 @@ export function BlogPostStateLoader({ post }: { post: Post }) {
   }, [post._id])
   React.useEffect(() => {
     // only append new comments
-    comments?.forEach((comment) => {
-      if (blogPostState.comments.find((c) => c.id === comment.id)) return
-      addComment(comment)
-    })
+    if (Array.isArray(comments)) {
+      comments.forEach((comment) => {
+        if (blogPostState.comments.find((c) => c.id === comment.id)) return
+        addComment(comment)
+      })
+    }
   }, [comments])
 
   return null

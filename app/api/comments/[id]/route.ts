@@ -67,7 +67,8 @@ export async function GET(req: NextRequest, { params }: Params) {
       )
     )
   } catch (error) {
-    return NextResponse.json({ error }, { status: 400 })
+    console.error('Error fetching comments:', error)
+    return NextResponse.json([], { status: 200 }) // 返回空数组而不是错误
   }
 }
 
