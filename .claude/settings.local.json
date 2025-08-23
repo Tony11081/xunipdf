@@ -32,7 +32,10 @@
       "Bash(echo)",
       "Bash(git remote get-url:*)",
       "Bash(sed:*)",
-      "Bash(rg:*)"
+      "Bash(rg:*)",
+      "Bash(true)",
+      "Bash(npm run dev:*)",
+      "WebFetch(domain:tarotdeck.online)"
     ],
     "deny": []
   }

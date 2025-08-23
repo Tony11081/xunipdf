@@ -3,7 +3,7 @@ import { type MetadataRoute } from 'next'
 import { getAllLatestBlogPostSlugs } from '~/sanity/queries'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://tarotdeck.online'
+  const baseUrl = 'https://tarotdeck.online'
   
   // 静态页面
   const staticPages: MetadataRoute.Sitemap = [
