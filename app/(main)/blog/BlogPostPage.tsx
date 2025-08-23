@@ -70,25 +70,34 @@ export function BlogPostPage({
                   damping: 20,
                 }}
               >
-                <div className="absolute z-0 hidden aspect-[240/135] w-full blur-xl saturate-150 after:absolute after:inset-0 after:hidden after:bg-white/50 dark:after:bg-black/50 md:block md:after:block">
-                  <Image
-                    src={post.mainImage.asset.url}
-                    alt=""
-                    className="select-none"
-                    unoptimized
-                    fill
-                    aria-hidden={true}
-                  />
-                </div>
-                <Image
-                  src={post.mainImage.asset.url}
-                  alt={post.title}
-                  className="select-none rounded-2xl ring-1 ring-zinc-900/5 transition dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20 md:rounded-3xl"
-                  placeholder="blur"
-                  blurDataURL={post.mainImage.asset.lqip}
-                  unoptimized
-                  fill
-                />
+                {post.mainImage?.asset?.url && (
+                  <>
+                    <div className="absolute z-0 hidden aspect-[240/135] w-full blur-xl saturate-150 after:absolute after:inset-0 after:hidden after:bg-white/50 dark:after:bg-black/50 md:block md:after:block">
+                      <Image
+                        src={post.mainImage.asset.url}
+                        alt=""
+                        className="select-none"
+                        unoptimized
+                        fill
+                        aria-hidden={true}
+                      />
+                    </div>
+                    <Image
+                      src={post.mainImage.asset.url}
+                      alt={post.title}
+                      className="select-none rounded-2xl ring-1 ring-zinc-900/5 transition dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20 md:rounded-3xl"
+                      placeholder={post.mainImage.asset.lqip ? "blur" : "empty"}
+                      blurDataURL={post.mainImage.asset.lqip || "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="}
+                      unoptimized
+                      fill
+                    />
+                  </>
+                )}
+                {!post.mainImage?.asset?.url && (
+                  <div className="flex aspect-[240/135] w-full items-center justify-center rounded-2xl bg-zinc-100 text-zinc-400 dark:bg-zinc-800 dark:text-zinc-500">
+                    No image available
+                  </div>
+                )}
               </motion.div>
               <motion.div
                 className="flex w-full items-center space-x-4 text-sm font-medium text-zinc-600/80 dark:text-zinc-400/80"
@@ -113,28 +122,30 @@ export function BlogPostPage({
                     })?.format('YYYY/MM/DD')}
                   </span>
                 </time>
-                <span className="inline-flex items-center space-x-1.5">
-                  <ScriptIcon />
-                  <span className="flex gap-1">
-                    {post.categories?.map((category, index) => {
-                      const safeCategory = category ? 
-                        category.trim().replace(/[^\w\s-]/g, '') : 
-                        '';
-                      
-                      return safeCategory ? (
-                        <span key={index} className="flex items-center">
-                          {index > 0 && <span>,</span>}
-                          <Link 
-                            href={`/categories/${encodeURIComponent(safeCategory)}`}
-                            className="hover:underline hover:text-zinc-800 dark:hover:text-zinc-200"
-                          >
-                            {category}
-                          </Link>
-                        </span>
-                      ) : null;
-                    })}
+                {post.categories && post.categories.length > 0 && (
+                  <span className="inline-flex items-center space-x-1.5">
+                    <ScriptIcon />
+                    <span className="flex gap-1">
+                      {post.categories
+                        .filter(category => category && typeof category === 'string')
+                        .map((category, index) => {
+                          const safeCategory = category.trim().replace(/[^\w\s-]/g, '');
+                          
+                          return safeCategory ? (
+                            <span key={index} className="flex items-center">
+                              {index > 0 && <span>,</span>}
+                              <Link 
+                                href={`/blog/category/${encodeURIComponent(safeCategory)}`}
+                                className="hover:underline hover:text-zinc-800 dark:hover:text-zinc-200"
+                              >
+                                {category}
+                              </Link>
+                            </span>
+                          ) : null;
+                        })}
+                    </span>
                   </span>
-                </span>
+                )}
               </motion.div>
               <motion.h1
                 className="mt-6 w-full text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl"
@@ -186,7 +197,7 @@ export function BlogPostPage({
 
                 <span className="inline-flex items-center space-x-1.5">
                   <HourglassIcon />
-                  <span>{post.readingTime.toFixed(0)} min read</span>
+                  <span>{(post.readingTime || 1).toFixed(0)} min read</span>
                 </span>
               </motion.div>
             </header>
