@@ -83,12 +83,6 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <head>
-          <Script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2357915943973678"
-            crossOrigin="anonymous"
-            strategy="afterInteractive"
-          />
         </head>
         <body className="flex h-full flex-col">
           <ThemeProvider
